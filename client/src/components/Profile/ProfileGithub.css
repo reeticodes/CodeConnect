@@ -1,0 +1,78 @@
+.ProfileGithub {
+	padding: 20px 0;
+	color: #666666;
+	margin: 0 20px;
+}
+
+.ProfileGithub > :nth-child(1) {
+	padding-bottom: 20px;
+	display: block;
+}
+
+.ProfileGithub > :nth-child(2) {
+	cursor: pointer;
+	display: flex;
+	overflow: auto;
+}
+
+.ProfileGithub > :nth-child(2)::-webkit-scrollbar {
+	
+	background-color: #d8d8d8;
+	height: 5px;
+}
+
+.ProfileGithub > :nth-child(2)::-webkit-scrollbar-thumb {
+
+	background-color: #808080;
+}
+
+.repo-object {
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	margin: 0 16px 20px 4px;
+	width: max-content;
+	transition: box-shadow 0.2s ease;
+	min-width: max-content;
+	overflow: hidden;
+}
+
+.repo-object:hover {
+	cursor: pointer;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.repo-name {
+	font-weight: bold;
+}
+
+.repo-name:hover {
+	text-decoration: underline;
+	color: #0077ff;
+}
+
+.git-dis {
+	margin: 15px 20px;
+	max-width: 190px;
+}
+
+.repo-object > :nth-child(1) > :nth-child(1) {
+	background-color: #edebe9;
+	padding: 10px 20px;
+}
+
+.repo-object-split {
+	display: flex;
+}
+
+.repo-object-split ul {
+	padding: 0 20px;
+	width: max-content;
+	border-right: 1px solid rgba(0, 0, 0, 0.226);
+}
+
+.italc-dis {
+	font-style: oblique;
+	color: #0000006c;
+}

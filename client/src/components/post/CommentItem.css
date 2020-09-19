@@ -1,0 +1,61 @@
+.CommentItem {
+	border: 2px solid var(--git-card-border-blue);
+	margin: 0 0 20px 20px;
+	max-width: calc(100% - 45px);
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.CommentItem > :nth-child(1) {
+	display: flex;
+	align-items: center;
+	color: #000;
+	border-bottom: 1px solid var(--git-card-border-blue);
+	background-color: var(--git-card-background-blue);
+	padding: 0 10px;
+	min-height: 35px;
+	font-size: 14px;
+}
+
+.CommentItem img {
+	height: 20px;
+	margin-right: 20px;
+	background-color: #000;
+	border-radius: 50%;
+}
+
+.CommentItem > :nth-child(1) > :nth-child(2):hover {
+	text-decoration: underline;
+	color: #0366d6;
+}
+
+.CommentItem > :nth-child(1) > :nth-child(3) {
+	color: rgba(0, 0, 0, 0.644);
+	margin-left: auto;
+}
+
+.CommentItem > :nth-child(2) {
+	padding: 0 15px;
+	font-size: 16px;
+}
+
+.CommentItem > :nth-child(3) {
+	height: 40px;
+	border-top: 1px solid var(--git-card-border-blue);
+}
+
+.CommentItem > :nth-child(3) > :nth-child(3) > button,
+.CommentItem > :nth-child(3) > * {
+	padding: 5px 15px 8px 15px;
+	background: transparent;
+	outline: none;
+	/* border-right: 1px solid rgba(0, 0, 0, 0.151); */
+	border-right: 1px solid var(--git-card-border-blue);
+	font-size: 16px;
+	height: 40px;
+}
+
+.CommentItem > :nth-child(3) > button:hover {
+	background: #e2ecf7;
+	color: #0077ff;
+}

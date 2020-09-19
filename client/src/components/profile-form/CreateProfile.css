@@ -1,0 +1,43 @@
+.CreateProfile {
+  padding: 40px;
+  background-color: rgb(193, 160, 255);
+  font-family: "Helvetica 93 Black Extended";
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.295);
+}
+
+.CreateProfile h1 {
+  padding-bottom: 50px;
+}
+
+.CreateProfile input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  width: 60%;
+  max-width: 300px;
+  outline: none;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.CreateProfile select {
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  width: 200px;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.CreateProfile textarea {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.329);
+  outline: none;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+}

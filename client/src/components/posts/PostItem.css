@@ -1,0 +1,71 @@
+.post {
+	margin: 20px;
+	border: 1px solid var(--git-card-border-blue);
+	border-radius: 4px;
+	overflow: hidden;
+	transition: box-shadow 0.2s ease;
+}
+
+.post:hover {
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.post > :nth-child(1) {
+	display: flex;
+	align-items: center;
+	background-color: var(--git-card-background-blue);
+	border-bottom: 1px solid var(--git-card-border-blue);
+	padding: 0 15px;
+	height: 45px;
+	font-size: 14px;
+}
+
+.post > :nth-child(1) > :nth-child(2) {
+	color: #24292e;
+}
+
+.post > :nth-child(1) > :nth-child(2):hover {
+	text-decoration: underline;
+	color: #0366d6;
+}
+
+.post img {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: #000;
+	margin-right: 20px;
+}
+
+.post-date {
+	margin-left: auto;
+	color: #6a737d;
+	font-size: 14px;
+}
+
+.post > :nth-child(2) {
+	padding: 0 15px;
+	font-size: 16px;
+}
+
+.post > :nth-child(3) {
+	/* border-top: 1px solid rgba(0, 0, 0, 0.151); */
+	border-top: 1px solid var(--git-card-border-blue);
+	background-color: var(--git-card-background-blue);
+}
+
+.post > :nth-child(3) > :nth-child(3) > button,
+.post > :nth-child(3) > * {
+	padding: 5px 15px 8px 15px;
+	background: transparent;
+	outline: none;
+	/* border-right: 1px solid rgba(0, 0, 0, 0.151); */
+	border-right: 1px solid var(--git-card-border-blue);
+	font-size: 16px;
+	height: 40px;
+}
+
+.post > :nth-child(3) > button:hover {
+	background: #e2ecf7;
+	color: #0077ff;
+}

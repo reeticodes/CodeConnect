@@ -1,0 +1,147 @@
+@font-face {
+	font-family: "Helvetica 93 Black Extended";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Helvetica 93 Black Extended"),
+		url("./font/HelveticaNeue-BlackExt.woff") format("woff");
+}
+
+:root {
+	--git-card-border-blue: #c0d3eb;
+	--git-card-background-blue: #f6f8fa;
+	--git-button-blue: #0366d6;
+	--git-section-divider: #e1e4e8;
+	--adobe-blue: #1373e6;
+}
+
+::selection {
+	color: #000;
+	background: #7efee0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", sans-serif;
+	background-color: #f2f2f2;
+	overflow-x: hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	user-select: none;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+p {
+	padding: 0;
+}
+
+button {
+	outline: none;
+	border: none;
+	border-radius: 0;
+	font-family: "Segoe UI", sans-serif;
+	user-select: none;
+	cursor: pointer;
+}
+
+.outlined {
+	color: #000000;
+	text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+		-1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 2px;
+}
+
+.App {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.container {
+	background-color: #fff;
+}
+
+.back-to-head {
+	display: block;
+	padding: 5px 10px;
+	margin-bottom: 20px;
+	background: transparent;
+	font-weight: bold;
+	border: 2px solid rgb(0, 0, 0);
+	width: max-content;
+}
+.back-to-head:hover {
+	background: black;
+	color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: 600;
+}
+
+.span-15x {
+	font-size: 15px;
+	color: rgba(0, 0, 0, 0.74);
+}
+
+.rounded-social {
+	font-family: inherit;
+	font-size: 18px;
+	padding: 5px 15px;
+	background: transparent;
+	border: 3px solid black;
+	border-radius: 999px;
+}
+
+.cover-black-btn {
+	font-family: inherit;
+	font-size: 18px;
+	padding: 5px 15px;
+	background: black;
+	border: 3px solid black;
+	color: white;
+	margin-top: 30px;
+}
+
+.fa-code-fork {
+	padding: 0 3.5px;
+}
+
+.page-headers {
+	font-weight: 500;
+	font-size: 20px;
+	color: #24292e;
+}
+
+@media screen and (max-width: 1500px) {
+	.App {
+		width: 100%;
+		margin: 0;
+	}
+}

@@ -1,0 +1,132 @@
+.ProfileTop {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button-group {
+	margin-top: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid rgba(27, 31, 35, 0.281);
+	color: #808080;
+}
+
+.button-group > :nth-child(1) {
+	border-right: 1px solid rgba(27, 31, 35, 0.281);
+}
+
+.button-group > button {
+	font-size: 14px;
+	font-family: "Segoe UI", sans-serif;
+	background-color: transparent;
+	width: 105px;
+	height: 31px;
+}
+
+.button-group > button:hover {
+	background-color: #f3f4f6;
+}
+
+.ProfileTop img {
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+	border-radius: 9999px;
+	width: max-content;
+}
+
+.icon-container {
+	padding-top: 20px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.icon-container i {
+	color: rgba(0, 0, 0, 0.747);
+}
+
+.icon-container i:hover {
+	color: #808080;
+}
+.followed {
+	color: green;
+	font-family: "Helvetica";
+	font-size: 10pt;
+	background-color: #ffffff;
+	border: 1px solid;
+	border-color: green;
+	border-radius: 3px;
+	width: 85px;
+	height: 30px;
+	cursor: hand;
+	display: none;
+}
+
+.btn {
+	margin-top: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid rgba(27, 31, 35, 0.281);
+	padding: 5px 10px;
+	background-color: transparent;
+	width: 208px;
+	font-size: 16px;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.follow {
+	margin-top: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid rgba(27, 31, 35, 0.281);
+	padding: 5px 10px;
+	background-color: transparent;
+	width: 208px;
+	font-size: 16px;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.follow:hover {
+	background-color: #f3f4f6;
+}
+.buttonunfollow {
+display: inline-block;
+padding: 0.6em 0.7em;
+margin:0.9em 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color: tomato;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+}
+.buttonfollow:active{
+top:0.1em;
+}
+.buttonfollow {
+display: inline-block;
+padding: 0.6em 0.7em;
+margin:0.9em 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color: mediumseagreen;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+}
+.buttonunfollow:active{
+top:0.1em;
+}

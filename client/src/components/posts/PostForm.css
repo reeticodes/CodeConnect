@@ -1,0 +1,72 @@
+.post-form {
+	padding: 20px;
+	width: 50%;
+	background-color: #f6f8fa;
+	border-left: 1px solid var(--git-section-divider);
+}
+
+.post-form div {
+	margin-bottom: 20px;
+}
+
+.post-form form textarea {
+	width: calc(100% - 20px);
+	min-height: 25px;
+	resize: vertical;
+	margin: 20px 0;
+	border-radius: 4px;
+	padding: 5px;
+	outline: none;
+	border: 1px solid rgb(225, 228, 232);
+	font-size: 16px;
+	color: #24292e;
+	font-family: inherit;
+}
+
+.post-form textarea:focus {
+	border: 1px solid var(--adobe-blue);
+	outline: var(--adobe-blue);
+}
+
+.post-form input {
+	outline: none;
+	font-family: "Segoe UI", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	color: var(--git-button-blue);
+	background-color: transparent;
+	padding: 6px 20px;
+	border-radius: 999px;
+	border: 2px solid var(--git-button-blue);
+	transition: all 0.2s ease;
+}
+
+.post-form input:hover {
+	background-color: var(--git-button-blue);
+	color: #fff;
+}
+
+.compose-section {
+	padding-bottom: 20px;
+	border-bottom: 2px solid var(--git-section-divider);
+}
+
+.announcement-section > :nth-child(2) {
+	padding-top: 20px;
+}
+
+.announcement-item > :nth-child(1) {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-bottom: 10px;
+	color: #24292e;
+}
+
+@media screen and (max-width: 900px) {
+	.post-form {
+		width: initial;
+		border-bottom: 1px solid rgb(225, 228, 232);
+	}
+}

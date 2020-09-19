@@ -1,0 +1,34 @@
+#dash-con {
+	/* background-color: #FAF9F8; */
+	padding: 20px 0;
+	min-height: calc(100vh - 369px);
+}
+
+.fuhrer {
+	border-radius: 50%;
+	height: 250px;
+}
+
+#dash-con > :nth-child(1) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#dash-con > :nth-child(2) {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 20px;
+}
+
+.user-post-sec {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+}
+
+@media only screen and (max-width: 900px) {
+	#dash-con > :nth-child(2) {
+		display: flex;
+		flex-direction: column;
+	}
+}

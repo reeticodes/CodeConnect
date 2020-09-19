@@ -1,0 +1,129 @@
+.EditProfile {
+  background: #96CFCC;
+  min-height: calc(100vh - 329px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5% 5%;
+  font-family: 'Helvetica 93 Black Extended', 'Segoe UI', sans-serif;
+}
+
+.EditProfile input {
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 50%;
+  font-size: 18px;
+  margin-bottom: 2px;
+  font-family: 'Segoe UI', sans-serif;
+  /* color: rgb(85, 85, 85); */
+}
+
+.EditProfile select {
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  width: max-content;
+  font-size: 18px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.EditProfile textarea {
+  background: transparent;
+  border: 2px solid black;
+  padding: 5px;
+  height: 200px;
+  outline: none;
+  width: 50%;
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.EditProfile h1 {
+  padding-bottom: 50px;
+}
+
+.form-text {
+  font-size: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 40px;
+}
+
+.form-group span {
+  padding-bottom: 15px;
+}
+
+.acc-last {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.acc-last button {
+  background: red;
+  font-family: 'Helvetica 93 Black Extended', 'Segoe UI', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+#confirm-acc {
+  background: black;
+  border-radius: 0;
+  outline: 0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Helvetica 93 Black Extended', 'Segoe UI', sans-serif;
+  color: white;
+  width: max-content;
+  margin-right: 40px;
+}
+
+#back-acc {
+  background: transparent;
+  border-radius: 0;
+  outline: 0;
+  border: 3px solid black;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Helvetica 93 Black Extended', 'Segoe UI', sans-serif;
+  color: rgb(0, 0, 0);
+  width: max-content;
+}
+
+#form-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#drop-social {
+  margin-bottom: 40px;
+}
+
+#edit-social button {
+  font-size: 20px;
+  font-family: 'Helvetica 93 Black Extended', 'Segoe UI', sans-serif;
+  background: transparent;
+}
+
+@media only screen and (max-width: 900px) {
+  .EditProfile input {
+    width: 75%;
+  }
+  
+  .EditProfile textarea {
+    width: calc(100% - 15px);
+  }  
+}
+

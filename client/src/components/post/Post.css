@@ -1,0 +1,17 @@
+.comment-section {
+	width: 65%;
+	min-height: calc(100vh - 329px);
+	padding: 20px 0;
+}
+
+.back-to-head {
+	margin: 0 20px;
+}
+
+@media screen and (max-width: 900px) {
+	.comment-section {
+		width: 100%;
+		min-height: calc(100vh - 329px);
+		padding: 20px 0;
+	}
+}
