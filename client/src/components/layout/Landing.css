@@ -12,7 +12,7 @@
 
 .Landing > :nth-child(1) > :nth-child(1) > :nth-child(1) {
   box-sizing: border-box;
-  background: rgb(0, 255, 128);
+  background: rgb(59, 230, 144);
   height: 100%;
   padding: 40px 0 40px 40px;
   display: flex;
