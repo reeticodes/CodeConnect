@@ -4,9 +4,10 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types'
 import {login} from '../../actions/auth';
 import './Login.css';
+import { setAlert } from '../../actions/alert'
 
 
-export const Login = ({login, isAuthenticated}) => {
+export const Login = ({login, isAuthenticated, setAlert}) => {
 
   const [formData, setFormData] = useState({
     email: '',
@@ -65,10 +66,11 @@ export const Login = ({login, isAuthenticated}) => {
 Login.prototypes ={
   login: PropTypes.func.isRequired,
   isAuthenticated : PropTypes.bool,
+  setAlert: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect( mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {setAlert,login})(Login);
