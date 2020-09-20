@@ -1,5 +1,4 @@
 #dash-con {
-	/* background-color: #FAF9F8; */
 	padding: 20px 0;
 	min-height: calc(100vh - 369px);
 }
@@ -30,5 +29,10 @@
 	#dash-con > :nth-child(2) {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.user-post-sec {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }

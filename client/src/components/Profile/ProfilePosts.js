@@ -29,6 +29,9 @@ const ProfilePosts = ({
 					))}
 				</div>
 			</div>
+			<div className="ProfilePostStats">
+				<span className="page-headers">User's Stats</span>
+			</div>
 		</Fragment>
 	);
 };
