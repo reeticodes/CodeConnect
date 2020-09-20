@@ -7,7 +7,7 @@ background: #2f3640;
 height: 35px;
     border-radius: 35px;
         padding: 5px;
-    transition-delay: 3s;
+    transition-delay: 3.1s;
 }
 
 .searchBox:hover > .searchInput {
@@ -33,7 +33,7 @@ height: 35px;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-    transition-delay: 3s;
+    transition-delay: 3.1s;
 }
 
 .searchInput {
@@ -47,7 +47,7 @@ height: 35px;
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
-    transition-delay: 3s;
+    transition-delay: 3.1s;
 
 }
 
