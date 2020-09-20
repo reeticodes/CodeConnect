@@ -24,7 +24,7 @@ const SearchBar = ({ setAlert, filterSearch }) => {
 
 	return (
 		<Fragment>
-			<form className="search-section" onSubmit={(e) => OnSubmit(e)}>
+			<form className="searchBox" onSubmit={(e) => OnSubmit(e)}>
 				<input
 					className="searchInput"
 					onChange={(e) => OnChange(e)}

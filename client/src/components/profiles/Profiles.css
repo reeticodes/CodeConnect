@@ -3,12 +3,18 @@
   min-height: calc(100vh - 369px);
 }
 
-.Profiles > h1 {
+.Profiles > .heading {
   align-content: center;
   display: flex;
   padding-bottom: 20px;
+  flex-wrap: wrap;
+
 }
 
+.Profiles .search{
+  float: right;
+  
+}
 .Profiles img {
   border-radius: 50%;
 }

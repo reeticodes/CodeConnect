@@ -17,7 +17,11 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       {loading ? <Spinner /> :
         <Fragment>
           <div className='Profiles'>
-            <h1>Browse Profiles <SearchBar/></h1>
+            <div className="heading">
+              <h1>Browse Profiles</h1>
+              <div className="search"><SearchBar /></div>
+            </div>
+            
             
             <div className="profile-grid">
               {profiles.length > 0 ? (
