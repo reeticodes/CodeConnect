@@ -1,8 +1,8 @@
 .alert {
-  padding: 10px;
-  background-color: #0366D6;
-  color: #fff;
-  position: sticky;
-  top: 0;
+	padding: 10px;
+	background-color: #0366d6;
+	color: #fff;
+	position: sticky;
+	top: 0;
+	border-bottom: 1px solid #fff;
 }
-
