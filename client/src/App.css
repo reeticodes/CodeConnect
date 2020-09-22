@@ -44,6 +44,7 @@ a {
 	text-decoration: none;
 	user-select: none;
 	padding: 0;
+	outline: none;
 }
 
 ul {
