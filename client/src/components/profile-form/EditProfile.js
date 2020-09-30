@@ -2,11 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {
-	createProfile,
-	getCurrentProfile,
-	deleteAccount,
-} from "../../actions/profile";
+import { createProfile, getCurrentProfile, deleteAccount } from "../../actions/profile";
 import "./EditProfile.css";
 import DeleteModal from "./DeleteModal";
 
@@ -45,8 +41,7 @@ const EditProfile = ({
 			location: loading || !profile.location ? "" : profile.location,
 			status: loading || !profile.status ? "" : profile.status,
 			skills: loading || !profile.skills ? "" : profile.skills,
-			githubusername:
-				loading || !profile.githubusername ? "" : profile.githubusername,
+			githubusername: loading || !profile.githubusername ? "" : profile.githubusername,
 			bio: loading || !profile.bio ? "" : profile.bio,
 			twitter: loading || !profile.twitter ? "" : profile.twitter,
 			facebook: loading || !profile.facebook ? "" : profile.facebook,
@@ -72,8 +67,7 @@ const EditProfile = ({
 		instagram,
 	} = formData;
 
-	const onChange = (e) =>
-		setFormData({ ...formData, [e.target.name]: e.target.value });
+	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -93,75 +87,77 @@ const EditProfile = ({
 					</Fragment>
 				)}
 				<form className="form" onSubmit={(e) => onSubmit(e)}>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="Name"
-							name="name"
-							value={name}
-							onChange={(e) => onChange(e)}
-						/>
-						<small className="form-text">Name</small>
-					</div>
-					<div className="form-group">
-						<select name="status" value={status} onChange={(e) => onChange(e)}>
-							<option value="0">Select Year</option>
-							<option value="First-Year">First Year</option>
-							<option value="Second-Year"> Second Year</option>
-							<option value="Third-Year">Third-Year</option>
-							<option value="Final-Year">Final-Year</option>
-						</select>
-						<span className="form-text">Student Year</span>
-					</div>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="Intern at?"
-							name="company"
-							value={company}
-							onChange={(e) => onChange(e)}
-						/>
-						<span className="form-text">Organistion</span>
-					</div>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="Personal Website"
-							name="website"
-							value={website}
-							onChange={(e) => onChange(e)}
-						/>
-						<span className="form-text">Website</span>
-					</div>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="Location"
-							name="location"
-							value={location}
-							onChange={(e) => onChange(e)}
-						/>
-						<span className="form-text">Location</span>
-					</div>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="c, c++, javascript"
-							name="skills"
-							value={skills}
-							onChange={(e) => onChange(e)}
-						/>
-						<span className="form-text">Skill Set</span>
-					</div>
-					<div className="form-group">
-						<input
-							type="text"
-							placeholder="Github Username"
-							name="githubusername"
-							value={githubusername}
-							onChange={(e) => onChange(e)}
-						/>
-						<span className="form-text">GitHub Account</span>
+					<div className="side__float">
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="Name"
+								name="name"
+								value={name}
+								onChange={(e) => onChange(e)}
+							/>
+							<small className="form-text">Name</small>
+						</div>
+						<div className="form-group">
+							<select name="status" value={status} onChange={(e) => onChange(e)}>
+								<option value="0">Select Year</option>
+								<option value="First-Year">First Year</option>
+								<option value="Second-Year"> Second Year</option>
+								<option value="Third-Year">Third-Year</option>
+								<option value="Final-Year">Final-Year</option>
+							</select>
+							<span className="form-text">Student Year</span>
+						</div>
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="Intern at?"
+								name="company"
+								value={company}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">Organistion</span>
+						</div>
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="Personal Website"
+								name="website"
+								value={website}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">Website</span>
+						</div>
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="Location"
+								name="location"
+								value={location}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">Location</span>
+						</div>
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="c, c++, javascript"
+								name="skills"
+								value={skills}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">Skill Set</span>
+						</div>
+						<div className="form-group">
+							<input
+								type="text"
+								placeholder="Github Username"
+								name="githubusername"
+								value={githubusername}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">GitHub Account</span>
+						</div>
 					</div>
 					<div className="form-group">
 						<textarea
