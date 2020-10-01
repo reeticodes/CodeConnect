@@ -6,7 +6,7 @@ import { GET_PROFILE, GET_PROFILES, PROFILE_ERROR, GET_REPOS,CLEAR_PROFILE, DELE
 
 //Get current users profile
 export const getCurrentProfile = () => async dispatch =>  {
-  dispatch({type: CLEAR_PROFILE});
+  
   try {
     const res = await axios.get('/api/profile/me');
 

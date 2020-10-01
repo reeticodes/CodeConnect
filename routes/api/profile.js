@@ -10,25 +10,8 @@ const Post = require('../../models/Posts')
 const User = require('../../models/User');
 
 const { check, validationResult } = require('express-validator');
-const { route } = require('./users');
-const multer = require('multer');
-const upload =multer({dest:'../../uploads/'});
 
-/* --------------------------------------*/
-const mongoose = require('mongoose');
-const fs = require('fs');
-
-let Grid = require('gridfs-stream');
-let conn = mongoose.connection;
-Grid.mongo = mongoose.mongo;
-let gfs;
-
-conn.once('open', () => {
-  gfs = Grid(conn.db);
-  console.log('gridfs connected!!')
-})
-
-/*-------------------------------------------*/
+const normalize = require('normalize-url');
 
 //@route GET api/profile/me
 //@desc Test route
@@ -72,7 +55,7 @@ if(!errors.isEmpty()){
     profileFields.user = req.user.id;
     if(name) profileFields.name = name;
     if (company) profileFields.company = company;
-    if (website) profileFields.website = website;
+    if (website) profileFields.website = normalize(website, {forceHttps: true});
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
@@ -103,7 +86,7 @@ if(!errors.isEmpty()){
         //Update
         profile = await Profile.findOneAndUpdate({user: req.user.id},
           {$set: profileFields},
-          {new: true}
+          {new: true, upsert: true, setDefaultsOnInsert: true }
           );
           return res.json(profile)
       }
