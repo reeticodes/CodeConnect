@@ -29,7 +29,9 @@ const DeleteModal = ({ deleteAccount }) => {
 
 	return (
 		<div className="DeleteModal">
-			<button onClick={(e) => setModal(true)}>Delete Account</button>
+			<button onClick={(e) => setModal(true)} className="danger__delete">
+				Danger Zone
+			</button>
 			<Modal
 				isOpen={modalIsOpen}
 				onRequestClose={(e) => setModal(false)}
