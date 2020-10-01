@@ -61,10 +61,8 @@ router.post('/',[
         email,
         password
       });
-      if(email ==  'reetisharma192@nhitm.ac.in'|| email == 'harshkarande192@nhitm.ac.in')
-      admin = true;
-      else 
-      admin = false;
+      if(user.email ==  'reetisharma192@nhitm.ac.in'|| email == 'harshkarande192@nhitm.ac.in')
+      user.admin = true;
 
   //Encrypt password
       const salt = await bcrypt.genSalt(10);

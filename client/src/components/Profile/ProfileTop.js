@@ -30,14 +30,14 @@ const ProfileTop = ({
 }) => {
 
 	
-	let [isFollowed, setFollow] = useState(true);
+	let [isFollowed, setFollow] = useState(false);
 
 
 
 	
-	// useEffect(()=> {
-	//   check();
-	// },[]);
+	useEffect(()=> {
+	  check();
+	},[]);
 	function check() {
 		for (let i = 0; i < followers.length; i++) {
 			if (followers[i].user.toString() === auth.user._id) {

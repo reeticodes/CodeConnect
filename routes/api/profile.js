@@ -193,14 +193,35 @@ router.get('/filter', async (req,res)=>{
 
 router.delete('/',auth,async(req,res) =>{
   try {
-    // Remove user posts
-      await Post.deleteMany({ user: req.user.id });
+
+    const myprofile = await Profile.findOne({ user: req.user.id });
+    let myfollowers = myprofile.followers;
+    let myfollowing = myprofile.following;
+    //console.log(`FOLLOWERS: ${myfollowers} ------------------------------------------- FOLLOWING : ${myfollowing}`)
+    for(let i=0;i<myfollowers.length;i++)
+    {
+      const userprofile = await Profile.findOne({user: myfollowers[i].user});
+      userprofile.following = userprofile.following.filter(({user})=> user.toString()!= req.user.id);
+      await userprofile.save();
+    }
+
+      for(let i=0;i<myfollowing.length;i++)
+    {
+      const userprofile = await Profile.findOne({user: myfollowing[i].user});
+      userprofile.followers = userprofile.followers.filter(({user})=> user.toString()!= req.user.id);
+      await userprofile.save();
+    }
+
+
+     // Remove user posts
+    await Post.deleteMany({ user: req.user.id });
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove user
     await User.findOneAndRemove({ _id: req.user.id });
 
     res.json({ msg: 'User deleted' });
+
   } catch (err) {
     console.error(err.message);
     res.status(500).send("server error")

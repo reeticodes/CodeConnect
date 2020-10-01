@@ -5,9 +5,8 @@ import PropTypes from 'prop-types'
 import './Landing.css'
 import hero from '../../img/cover-hero.svg';
 import Login from '../Auth/Login';
-import { setAlert } from '../../actions/alert'
 
-  const Landing = ({isAuthenticated, setAlert}) => {
+  const Landing = ({isAuthenticated}) => {
     if(isAuthenticated) {
       return <Redirect to='/posts' />;
     }
@@ -44,5 +43,5 @@ Landing.propTypes = {
 const mapStateToProps = state => ({
   isAuthenticated : state.auth.isAuthenticated
 });
-export default connect(mapStateToProps, { setAlert})(Landing);
+export default connect(mapStateToProps)(Landing);
 
