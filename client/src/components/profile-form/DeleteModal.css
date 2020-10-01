@@ -1,9 +1,23 @@
+.danger__delete {
+	padding: 5px 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	border-radius: 999px;
+	outline: none;
+	background-color: red;
+	color: #fff;
+}
+
 .confirm__detele {
 	display: block;
 	margin-bottom: 15px;
 	border: 2px solid rgba(35, 27, 27, 0.158);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 500;
 	color: #ffffff;
 	background-color: #ff0015;
@@ -17,8 +31,8 @@
 .delete__cancel {
 	display: block;
 	border: 1px solid rgba(27, 31, 35, 0.24);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 500;
 	color: #24292e;
 	background-color: #ffffff;

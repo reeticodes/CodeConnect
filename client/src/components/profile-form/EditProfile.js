@@ -11,7 +11,12 @@ const EditProfile = ({
 	history,
 	deleteAccount,
 	getCurrentProfile,
+<<<<<<< HEAD
 	profile:{profile,loading}
+=======
+	profile,
+	loading,
+>>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 }) => {
 	const [formData, setFormData] = useState({
 		name: " ",
@@ -49,7 +54,11 @@ const EditProfile = ({
 			youtube: loading || !profile.youtube ? "" : profile.youtube,
 			instagram: loading || !profile.instagram ? "" : profile.instagram,
 		});
+<<<<<<< HEAD
 	}, [loading, getCurrentProfile]);
+=======
+	}, [loading, getCurrentProfile, profile]);
+>>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 
 	const {
 		name,
@@ -86,6 +95,7 @@ const EditProfile = ({
 						<h1>Profile Setup</h1>
 					</Fragment>
 				)}
+
 				<form className="form" onSubmit={(e) => onSubmit(e)}>
 					<div className="side__float">
 						<div className="form-group">
@@ -96,7 +106,7 @@ const EditProfile = ({
 								value={name}
 								onChange={(e) => onChange(e)}
 							/>
-							<small className="form-text">Name</small>
+							<span className="form-text">Name</span>
 						</div>
 						<div className="form-group">
 							<select name="status" value={status} onChange={(e) => onChange(e)}>
@@ -156,93 +166,92 @@ const EditProfile = ({
 								value={githubusername}
 								onChange={(e) => onChange(e)}
 							/>
-							<span className="form-text">GitHub Account</span>
+							<span className="form-text">GitHub Username</span>
+						</div>
+						<div className="form-group">
+							<textarea
+								placeholder="A short bio of yourself"
+								name="bio"
+								value={bio}
+								onChange={(e) => onChange(e)}
+							></textarea>
+							<span className="form-text">About</span>
 						</div>
 					</div>
-					<div className="form-group">
-						<textarea
-							placeholder="A short bio of yourself"
-							name="bio"
-							value={bio}
-							onChange={(e) => onChange(e)}
-						></textarea>
-						<span className="form-text">About</span>
-					</div>
-
-					<div id="edit-social">
+					<div className="one__line__center">
 						<button
 							onClick={() => toggleSocialInputs(!displaySocialInputs)}
 							type="button"
 							id="drop-social"
+							className="social__media"
 						>
-							Add Social Media Links
+							{displaySocialInputs ? "Collapse Social Media Links" : "Expand Social Media Links"}
 						</button>
 					</div>
-					{displaySocialInputs && (
-						<Fragment>
-							<div className="form-group social-input">
-								<i class="fa fa-twitter"></i>
-								<input
-									type="text"
-									placeholder="Twitter URL"
-									name="twitter"
-									value={twitter}
-									onChange={(e) => onChange(e)}
-								/>
-							</div>
+					<div className="side__float">
+						{displaySocialInputs && (
+							<Fragment>
+								<div className="form-group social-input">
+									<i class="fa fa-twitter"></i>
+									<input
+										type="text"
+										placeholder="Twitter URL"
+										name="twitter"
+										value={twitter}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+								<div className="form-group social-input">
+									<i class="fa fa-facebook-official"></i>
+									<input
+										type="text"
+										placeholder="Facebook URL"
+										name="facebook"
+										value={facebook}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+								<div className="form-group social-input">
+									<i class="fa fa-youtube-play"></i>
+									<input
+										type="text"
+										placeholder="YouTube URL"
+										name="youtube"
+										value={youtube}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
 
-							<div className="form-group social-input">
-								<i class="fa fa-facebook-official"></i>
-								<input
-									type="text"
-									placeholder="Facebook URL"
-									name="facebook"
-									value={facebook}
-									onChange={(e) => onChange(e)}
-								/>
-							</div>
-
-							<div className="form-group social-input">
-								<i class="fa fa-youtube-play"></i>
-								<input
-									type="text"
-									placeholder="YouTube URL"
-									name="youtube"
-									value={youtube}
-									onChange={(e) => onChange(e)}
-								/>
-							</div>
-
-							<div className="form-group social-input">
-								<i class="fa fa-linkedin-square"></i>
-								<input
-									type="text"
-									placeholder="Linkedin URL"
-									name="linkedin"
-									value={linkedin}
-									onChange={(e) => onChange(e)}
-								/>
-							</div>
-
-							<div className="form-group social-input">
-								<i class="fa fa-instagram"></i>
-								<input
-									type="text"
-									placeholder="Instagram URL"
-									name="instagram"
-									value={instagram}
-									onChange={(e) => onChange(e)}
-								/>
-							</div>
-						</Fragment>
-					)}
-					<div id="form-end">
-						<input type="submit" id="confirm-acc" />
-						<Link id="back-acc" to="/dashboard">
-							Go Back
-						</Link>
+								<div className="form-group social-input">
+									<i class="fa fa-linkedin-square"></i>
+									<input
+										type="text"
+										placeholder="Linkedin URL"
+										name="linkedin"
+										value={linkedin}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+								<div className="form-group social-input">
+									<i class="fa fa-instagram"></i>
+									<input
+										type="text"
+										placeholder="Instagram URL"
+										name="instagram"
+										value={instagram}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+							</Fragment>
+						)}
 					</div>
-					<div className="acc-last">
+					<div className="one__line__center">
+						<button type="submit" className="confirm__changes">
+							Update Changes
+						</button>
+						<Link id="back-acc" to="/dashboard">
+							<button className="head__back">Go Back</button>
+						</Link>
 						<DeleteModal deleteAccount={deleteAccount} />
 					</div>
 				</form>
@@ -258,7 +267,12 @@ EditProfile.propTypes = {
 	deleteAccount: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
+<<<<<<< HEAD
 	profile: state.profile,
+=======
+	profile: state.profile.profile,
+	loading: state.profile.loading,
+>>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 });
 export default connect(mapStateToProps, {
 	createProfile,
