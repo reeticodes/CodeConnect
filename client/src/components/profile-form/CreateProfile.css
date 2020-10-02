@@ -1,43 +1,113 @@
 .CreateProfile {
-  padding: 40px;
-  background-color: rgb(193, 160, 255);
-  font-family: "Helvetica 93 Black Extended";
+	padding: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
 }
 
-::placeholder {
-  color: rgba(255, 255, 255, 0.295);
+.CreateProfile > form {
+	min-height: 100px;
+	max-width: 700px;
+	margin: 20px auto;
+	border: 1px solid #e1e4e8;
+	padding: 20px;
+	border-radius: 6px;
+	background-color: #f6f8fa;
 }
 
-.CreateProfile h1 {
-  padding-bottom: 50px;
+.side__float {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	margin-bottom: 30px;
+	align-items: flex-start;
 }
 
-.CreateProfile input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid rgb(0, 0, 0);
-  width: 60%;
-  max-width: 300px;
-  outline: none;
-  font-size: 18px;
-  font-family: inherit;
+.one__line__center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.CreateProfile select {
-  background: transparent;
-  border: 2px solid black;
-  outline: none;
-  width: 200px;
-  font-size: 18px;
-  font-family: inherit;
+.CreateProfile .form-group {
+	display: flex;
+	flex-direction: column-reverse;
 }
 
-.CreateProfile textarea {
-  width: 100%;
-  max-width: 500px;
-  background: rgba(0, 0, 0, 0.329);
-  outline: none;
-  border: none;
-  font-size: 18px;
-  padding: 5px;
+.CreateProfile .form-group > span {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.CreateProfile .form-group > input {
+	background-color: #fafbfc;
+	padding: 5px 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	border: 1px solid #e1e4e8;
+	border-radius: 6px;
+	outline: none;
+	box-shadow: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+}
+
+.CreateProfile .form-group > input:focus {
+	border: 1px solid #0366d6;
+}
+
+.CreateProfile .form-group > select {
+	background-color: #fafbfc;
+	padding: 5px 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	border: 1px solid #e1e4e8;
+	border-radius: 6px;
+	outline: none;
+	box-shadow: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+}
+
+.CreateProfile .form-group > textarea {
+	resize: vertical;
+	min-width: 335px;
+	min-height: 20px;
+	background-color: #fafbfc;
+	padding: 5px 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	border: 1px solid #e1e4e8;
+	border-radius: 6px;
+	outline: none;
+	box-shadow: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+}
+
+.CreateProfile .form-group > textarea:focus {
+	border: 1px solid #0366d6;
+}
+
+.social__media {
+	padding: 5px 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	border-radius: 999px;
+	outline: none;
+	background-color: #0366d6;
+	color: #fff;
+	margin-bottom: 30px;
 }
