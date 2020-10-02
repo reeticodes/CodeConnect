@@ -15,7 +15,9 @@ const AnnouncementSchema = new Schema ({
     default: Date.now
   },
   imageURL: {
-    type: String
-  }
+   originalname: String,
+   filename: String,
+   contentType: String
+  } 
   });
 module.exports = mongoose.model('announcements', AnnouncementSchema)

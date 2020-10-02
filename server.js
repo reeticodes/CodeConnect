@@ -1,6 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
-
+const methoseoverride = require('method-override')
 
 const app = express();
 
@@ -10,6 +10,7 @@ connectDB();
 //Init Middleware
 app.use(express.json({extended: false}));
 app.use(express.urlencoded({extended:true}))
+app.use(methoseoverride('_method'))
 
 app.get('/', (req,res) => res.send('API running...') )
 

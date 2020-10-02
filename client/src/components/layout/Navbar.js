@@ -18,9 +18,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			</span>
 			<span>
 				<Link to="/dashboard">DASHBOARD</Link>
-				<a href="#!" onClick={logout}>
-					LOGOUT
-				</a>
+			
+				<Link to="/" onClick={logout}>LOGOUT</Link>
 			</span>
 		</div>
 	);

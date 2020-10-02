@@ -1,11 +1,11 @@
 import React,{useState, Fragment} from 'react';
-import {withRouter} from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import { createProfile } from '../../actions/profile'
 import './CreateProfile.css';
 
-const CreateProfile = ({createProfile, history}) => {
+const CreateProfile = ({createProfile, history, profile:{profile,loading}}) => {
   const [formData,setFormData] = useState({
     name: ' ',
     company: '',
@@ -45,7 +45,10 @@ const CreateProfile = ({createProfile, history}) => {
     e.preventDefault();
     createProfile(formData,history)
   }
-
+  if(profile!=null)
+  {
+    return <Redirect to="/posts"/>
+  }
   return (
     <Fragment>
     
@@ -154,6 +157,11 @@ const CreateProfile = ({createProfile, history}) => {
 
 CreateProfile.propTypes = {
 createProfile : PropTypes.func.isRequired,
-}
+profile: PropTypes.object.isRequired,
 
-export default connect(null, {createProfile})(withRouter(CreateProfile))
+}
+const mapStateToProps = (state) => ({
+	profile: state.profile,
+});
+
+export default connect(mapStateToProps, {createProfile})(withRouter(CreateProfile))
