@@ -11,12 +11,7 @@ const EditProfile = ({
 	history,
 	deleteAccount,
 	getCurrentProfile,
-<<<<<<< HEAD
 	profile:{profile,loading}
-=======
-	profile,
-	loading,
->>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 }) => {
 	const [formData, setFormData] = useState({
 		name: " ",
@@ -54,11 +49,7 @@ const EditProfile = ({
 			youtube: loading || !profile.youtube ? "" : profile.youtube,
 			instagram: loading || !profile.instagram ? "" : profile.instagram,
 		});
-<<<<<<< HEAD
 	}, [loading, getCurrentProfile]);
-=======
-	}, [loading, getCurrentProfile, profile]);
->>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 
 	const {
 		name,
@@ -267,12 +258,7 @@ EditProfile.propTypes = {
 	deleteAccount: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
-<<<<<<< HEAD
 	profile: state.profile,
-=======
-	profile: state.profile.profile,
-	loading: state.profile.loading,
->>>>>>> e733f9c315e40dab481e0fe518cc5ae02b0c86ef
 });
 export default connect(mapStateToProps, {
 	createProfile,

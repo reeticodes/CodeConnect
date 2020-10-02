@@ -16,13 +16,11 @@
 }
 
 .ProfileGithub > :nth-child(2)::-webkit-scrollbar {
-	
 	background-color: #d8d8d8;
 	height: 5px;
 }
 
 .ProfileGithub > :nth-child(2)::-webkit-scrollbar-thumb {
-
 	background-color: #808080;
 }
 
