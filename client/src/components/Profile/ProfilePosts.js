@@ -7,12 +7,7 @@ import PostItem from "../posts/PostItem";
 // import "../posts/Post.css";
 import "./ProfilePosts.css";
 
-const ProfilePosts = ({
-	getprofileposts,
-	profile,
-	post: { posts, loading },
-	userid,
-}) => {
+const ProfilePosts = ({ getprofileposts, profile, post: { posts, loading }, userid }) => {
 	useEffect(() => {
 		getprofileposts(userid);
 	}, [getprofileposts]);
@@ -28,9 +23,6 @@ const ProfilePosts = ({
 						<PostItem key={post._id} post={post} />
 					))}
 				</div>
-			</div>
-			<div className="ProfilePostStats">
-				<span className="page-headers">User's Stats</span>
 			</div>
 		</Fragment>
 	);

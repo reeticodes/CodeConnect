@@ -10,12 +10,7 @@ import ProfileGithub from "./ProfileGithub";
 import ProfilePosts from "./ProfilePosts";
 import "./Profile.css";
 
-const Profile = ({
-	match,
-	getProfileById,
-	auth,
-	profile: { profile, loading, user },
-}) => {
+const Profile = ({ match, getProfileById, auth, profile: { profile, loading, user } }) => {
 	useEffect(() => {
 		getProfileById(match.params.id);
 	}, [getProfileById, match]);
@@ -28,30 +23,15 @@ const Profile = ({
 				<Fragment>
 					<div id="dash-con">
 						<div>
-							<Link to="/profiles" className="back-to-head">
-								Back To Profiles
-							</Link>
-							{auth.isAuthenticated &&
-								auth.loading === false &&
-								auth.user._id === profile.user._id && (
-									<Link to="/edit-profile" className="back-to-head">
-										Edit Profile
-									</Link>
-								)}
+							<span className="page-headers">Dashboard</span>
 						</div>
 						<div>
 							<ProfileTop profile={profile} />
 							<ProfileAbout profile={profile} />
 						</div>
-						{profile.githubusername && (
-							<ProfileGithub username={profile.githubusername} />
-						)}
+						{profile.githubusername && <ProfileGithub username={profile.githubusername} />}
 						<div className="user-post-sec">
 							<ProfilePosts userid={profile.user._id}></ProfilePosts>
-							{/* <div>
-								<h2>User Stats</h2>
-								<h3>Total upvotes</h3> {}
-							</div> */}
 						</div>
 					</div>
 				</Fragment>

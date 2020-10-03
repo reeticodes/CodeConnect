@@ -3,6 +3,10 @@
 	min-height: calc(100vh - 369px);
 }
 
+#dash-con .page-headers {
+	padding-left: 20px;
+}
+
 .fuhrer {
 	border-radius: 50%;
 	height: 250px;

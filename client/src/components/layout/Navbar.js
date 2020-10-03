@@ -60,33 +60,25 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			</div>
 			<nav className="navbar">
 				{isMinNavOpen ? (
-					<img
-						src={ham_close}
-						className="min__nav"
-						onClick={() => setMinNavOpen(!isMinNavOpen)}
-					/>
+					<img src={ham_close} className="min__nav" onClick={() => setMinNavOpen(!isMinNavOpen)} />
 				) : (
-					<img
-						src={ham_open}
-						className="min__nav"
-						onClick={() => setMinNavOpen(!isMinNavOpen)}
-					/>
+					<img src={ham_open} className="min__nav" onClick={() => setMinNavOpen(!isMinNavOpen)} />
 				)}
 				<span id="title">
 					<Link to="/">
 						<span className="outlined">CODE</span> CONNECT
 					</Link>
 				</span>
-				{!loading && (
-					<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-				)}
+				{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
 			</nav>
 			{isMinNavOpen ? (
 				<div className="min__nav__content">
-					<a href=".">FEED</a>
+					<a href=".">HOME</a>
+					{isAuthenticated ? "" : <a href=".">REGISTER</a>}
 					<a href=".">STUDENTS</a>
-					<a href=".">DASHBOARD</a>
-					<a href=".">LOGOUT</a>
+					{isAuthenticated ? <a href=".">DASHBOARD</a> : ""}
+					<a href=".">GITHUB</a>
+					{isAuthenticated ? <a href=".">LOGOUT</a> : ""}
 				</div>
 			) : null}
 		</div>

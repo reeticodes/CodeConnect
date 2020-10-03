@@ -125,7 +125,6 @@
 	outline: none;
 	background-color: #2ea44f;
 	color: #fff;
-	margin-right: 30px;
 }
 
 .head__back {
@@ -140,7 +139,7 @@
 	outline: none;
 	background-color: #d6d6d6;
 	color: #24292e;
-	margin-right: 30px;
+	margin-left: 30px;
 }
 
 @media only screen and (max-width: 900px) {
