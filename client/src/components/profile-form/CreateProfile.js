@@ -109,6 +109,75 @@ const CreateProfile = ({ createProfile, history }) => {
 						</div>
 					</div>
 					<div className="one__line__center">
+						<button
+							onClick={() => toggleSocialInputs(!displaySocialInputs)}
+							type="button"
+							className="social__media"
+						>
+							Social Media
+						</button>
+					</div>
+					<div className="side__float">
+						{displaySocialInputs && (
+							<Fragment>
+								<div className="form-group social-input">
+									<i class="fa fa-twitter"></i>
+									<input
+										type="text"
+										placeholder="https://twitter.com/"
+										name="twitter"
+										value={twitter}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+
+								<div className="form-group social-input">
+									<i class="fa fa-facebook-official"></i>
+									<input
+										type="text"
+										placeholder="Facebook URL"
+										name="facebook"
+										value={facebook}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+
+								<div className="form-group social-input">
+									<i class="fa fa-youtube-play"></i>
+									<input
+										type="text"
+										placeholder="YouTube URL"
+										name="youtube"
+										value={youtube}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+
+								<div className="form-group social-input">
+									<i class="fa fa-linkedin-square"></i>
+									<input
+										type="text"
+										placeholder="Linkedin URL"
+										name="linkedin"
+										value={linkedin}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+
+								<div className="form-group social-input">
+									<i class="fa fa-instagram"></i>
+									<input
+										type="text"
+										placeholder="Instagram URL"
+										name="instagram"
+										value={instagram}
+										onChange={(e) => onChange(e)}
+									/>
+								</div>
+							</Fragment>
+						)}
+					</div>
+					<div className="one__line__center">
 						<button type="submit" className="confirm__changes">
 							Submit
 						</button>

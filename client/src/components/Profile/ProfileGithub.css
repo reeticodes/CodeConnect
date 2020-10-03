@@ -10,7 +10,6 @@
 }
 
 .ProfileGithub > :nth-child(2) {
-	cursor: pointer;
 	display: flex;
 	overflow: auto;
 }
@@ -18,10 +17,12 @@
 .ProfileGithub > :nth-child(2)::-webkit-scrollbar {
 	background-color: #d8d8d8;
 	height: 5px;
+	border-radius: 999px;
 }
 
 .ProfileGithub > :nth-child(2)::-webkit-scrollbar-thumb {
-	background-color: #808080;
+	background-color: #8d8d8d;
+	border-radius: 999px;
 }
 
 .repo-object {
@@ -37,7 +38,6 @@
 }
 
 .repo-object:hover {
-	cursor: pointer;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 

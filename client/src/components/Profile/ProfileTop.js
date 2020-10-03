@@ -2,12 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, Redirect } from "react-router-dom";
 import "./ProfileTop.css";
-import {
-	followUser,
-	unfollowUser,
-	getFolllowers,
-	getFollowing,
-} from "../../actions/profile";
+import { followUser, unfollowUser, getFolllowers, getFollowing } from "../../actions/profile";
 import { connect } from "react-redux";
 
 const ProfileTop = ({
@@ -15,33 +10,17 @@ const ProfileTop = ({
 	followUser,
 	unfollowUser,
 	auth,
-	profile: {
-		user,
-		followers,
-		following,
-		status,
-		company,
-		location,
-		website,
-		social,
-		name,
-		avatar,
-	},
+	profile: { user, followers, following, status, company, location, website, social, name, avatar },
 }) => {
-
-	
 	let [isFollowed, setFollow] = useState(false);
 
-
-
-	
-	useEffect(()=> {
-	  check();
-	},[]);
+	useEffect(() => {
+		check();
+	}, []);
 	function check() {
 		for (let i = 0; i < followers.length; i++) {
 			if (followers[i].user.toString() === auth.user._id) {
-				setFollow(true); 
+				setFollow(true);
 				return;
 			}
 		}
@@ -50,7 +29,6 @@ const ProfileTop = ({
 	}
 	const Followed = (
 		<div>
-			
 			<button
 				className="buttonunfollow"
 				onClick={() => {
@@ -80,28 +58,28 @@ const ProfileTop = ({
 		<div className="ProfileTop">
 			<img src={avatar} alt="avatar" />
 			<h3>{name}</h3>
-			
-			{isAuthenticated&&user._id !== auth.user._id && (
+
+			{isAuthenticated && user._id !== auth.user._id && (
 				<Fragment>{isFollowed ? Followed : NotFollowed}</Fragment>
 			)}
 			<div className="button-group">
 				<button>
-					<Link to={`/profile/followers/${user._id}`}>
-						Followers {followers.length}
-					</Link>
+					<Link to={`/profile/followers/${user._id}`}>Followers {followers.length}</Link>
 				</button>
 				<button>
-					<Link to={`/profile/following/${user._id}`}>
-						Following {following.length}
-					</Link>
+					<Link to={`/profile/following/${user._id}`}>Following {following.length}</Link>
 				</button>
 			</div>
+			{isAuthenticated && auth.loading === false && auth.user._id === user._id && (
+				<Link to="/edit-profile" className="buttonunfollow">
+					Edit Profile
+				</Link>
+			)}
 
 			<p>{status} Student</p>
 			{location && (
 				<span>
-					<i className="fa fa-map-marker"></i>
-					{location}
+					<i className="fa fa-map-marker"></i> {location}
 				</span>
 			)}
 			<div className="icon-container">
@@ -149,7 +127,7 @@ const mapStateToProps = (state) => ({
 	followers: state.profile.followers,
 	following: state.profile.following,
 	auth: state.auth,
-	isAuthenticated: state.auth.isAuthenticated
+	isAuthenticated: state.auth.isAuthenticated,
 });
 export default connect(mapStateToProps, {
 	followUser,

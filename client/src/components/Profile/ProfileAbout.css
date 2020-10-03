@@ -1,5 +1,6 @@
 .profile-about {
-	width: calc(100% - 270px);
+	width: 800px;
+	margin: 0 auto;
 }
 
 .pro-bio {
@@ -90,6 +91,8 @@
 	.profile-about {
 		width: 100%;
 		margin-top: 20px;
+		padding: 20px;
+		box-sizing: border-box;
 	}
 
 	.pro-bio > :nth-child(2) {
