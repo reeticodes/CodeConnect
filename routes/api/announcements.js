@@ -55,13 +55,39 @@ const conn = mongoose.connection;
 
 
 
-router.post('/',[auth,[upload.single('imageURL')]],async(req,res)=>{
+// router.post('/',[auth,[upload.single('imageURL')]],async(req,res)=>{
+//   const errors = validationResult(req);
+//   if(!errors.isEmpty()){
+//     return res.status(400).json({errors: errors.array()})
+//   }
+//   try{
+//     const admin =  await User.findById(req.user.id).select('-password');
+//     if(admin.admin == false)
+//     return res.status(400).send("Admin authentiction required")
+
+//     const newAnnouncement = new Announcements({
+//       title : req.body.title,
+//       desc : req.body.desc,
+//       imageURL : req.file
+//     })
+
+//     const announcement = await newAnnouncement.save();
+//     res.json(announcement);
+
+//   }
+//   catch(err)
+//   {   
+//     console.error(err.message);
+//     res.status(500).send('Server error')
+//   }
+// })
+
+router.post('/',auth,async(req,res)=>{
   const errors = validationResult(req);
   if(!errors.isEmpty()){
     return res.status(400).json({errors: errors.array()})
   }
   try{
-    console.log(connectDB)
     const admin =  await User.findById(req.user.id).select('-password');
     if(admin.admin == false)
     return res.status(400).send("Admin authentiction required")
@@ -69,7 +95,6 @@ router.post('/',[auth,[upload.single('imageURL')]],async(req,res)=>{
     const newAnnouncement = new Announcements({
       title : req.body.title,
       desc : req.body.desc,
-      imageURL : req.file
     })
 
     const announcement = await newAnnouncement.save();
@@ -82,7 +107,6 @@ router.post('/',[auth,[upload.single('imageURL')]],async(req,res)=>{
     res.status(500).send('Server error')
   }
 })
-
 
 
 router.get('/', async(req,res)=>{
@@ -102,14 +126,15 @@ router.get('/:id', async(req,res)=>{
     if(!announcement)
     return res.status(404).send("Announcement not found");
 
-    gfs.findOne({filename: announcement.imageURL.filename}, (err,file)=>{
-      if(err||!file)
-      {
-        return res.status(400).send("Not found");
-      }
-    });
-    console.log(announcement.imageURL.filename)
-    gfs.createReadStream({filename: announcement.imageURL.filename}).pipe(res);
+    res.json(announcement);
+    // gfs.findOne({filename: announcement.imageURL.filename}, (err,file)=>{
+    //   if(err||!file)
+    //   {
+    //     return res.status(400).send("Not found");
+    //   }
+    // });
+    // console.log(announcement.imageURL.filename)
+    // gfs.createReadStream({filename: announcement.imageURL.filename}).pipe(res);
     
     
 
@@ -121,6 +146,29 @@ router.get('/:id', async(req,res)=>{
   }
 })
 
+
+
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const announcement = await Announcements.findById(req.params.id)
+    if(!announcement){
+      return res.status(404).send("announcement not found");
+    }
+   const admin =  await User.findById(req.user.id).select('-password');
+    if(admin.admin == false)
+    return res.status(400).send("Admin authentiction required")
+    
+    await announcement.remove();
+    res.json({msg:"announcement removed"})
+    
+    
+  } catch (err) {
+    if (err.kind === 'ObjectId')
+      return res.status(404).send("Post not found");
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
 
 
 module.exports = router;

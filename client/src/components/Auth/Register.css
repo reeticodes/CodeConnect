@@ -1,45 +1,51 @@
 .Register {
-  min-height: calc(100vh - 329px);
-  background: #ffff64;
-  box-sizing: border-box;
-  padding: 40px;
-  font-family: "Helvetica 93 Black Extended";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	min-height: calc(100vh - 329px);
+	background: #ffff70;
+	box-sizing: border-box;
+	padding: 40px;
+	font-family: "Helvetica 93 Black Extended";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .Register h1 {
-  font-size: 40px;
-  margin-bottom: 50px;
+	font-size: 40px;
+	margin-bottom: 50px;
+}
+
+.register-form > .form-group {
+	margin-bottom: 30px;
 }
 
 .Register input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid black;
-  width: 60%;
-  max-width: 300px;
-  outline: none;
-  font-family: inherit;
-  font-size: 18px;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid black;
+	width: 60%;
+	max-width: 300px;
+	outline: none;
+	font-family: inherit;
+	font-size: 18px;
+	display: block;
+	margin-top: 10px;
 }
 
 .Register .form-group span {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 #Register-button {
-  color: white;
-  background: black;
-  font-family: "Helvetica 93 Black Extended";
-  padding: 10px 15px;
-  width: max-content;
-  cursor: pointer;
-  margin-bottom: 40px;
+	color: white;
+	background: black;
+	font-family: "Helvetica 93 Black Extended";
+	padding: 10px 15px;
+	width: max-content;
+	cursor: pointer;
+	margin-bottom: 40px;
 }
 
 .underline-button:hover {
-  padding-bottom: 1px;
-  border-bottom: 2px solid black;
+	padding-bottom: 1px;
+	border-bottom: 2px solid black;
 }

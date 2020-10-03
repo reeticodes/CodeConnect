@@ -19,20 +19,6 @@
   align-items: center;
 }
 
-/* .Landing > :nth-child(1) > :nth-child(1) > :nth-child(1) > span {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 40px;
-}
-
-.Landing > :nth-child(1) > :nth-child(1) > :nth-child(1) > a {
-  font-size: 20px;
-  padding: 10px 15px;
-  background-color: black;
-  color: white;
-  margin-right: 10px;
-} */
-
 .Landing > :nth-child(1) > :nth-child(1) > :nth-child(2) {
   background: rgb(253, 188, 199);
   height: 100%;
