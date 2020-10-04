@@ -24,13 +24,13 @@ export default function( state = initialState, action ) {
   case ADD_ANNOUNCEMENT:
     return{
       ...state,
-      announcements: [payload, ...state.announcement],
+      announcements: payload,
       loading:false
       }
   case DELETE_ANNOUNCEMENT:
     return {
       ...state,
-        announcements: state.announcement.announcements.filter((ann) => ann._id !== payload),
+        announcements: state.announcements.filter((ann) => ann._id !== payload),
         loading: false,
       };
   

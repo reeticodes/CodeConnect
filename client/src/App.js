@@ -8,7 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Alert from "./components/layout/Alert";
 
-import Login from "./components/Auth/Login";
+//import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 
 import Dashboard from "./components/dashboard/Dashboard";
@@ -58,7 +58,7 @@ const App = () => {
 							
 							<Switch>
 								<Route exact path="/register" component={Register} />
-								<Route exact path="/login" component={Login} />
+								{/* <Route exact path="/login" component={Login} /> */}
 								<Route exact path="/profiles" component={Profiles} />
 								<Route
 									exact
