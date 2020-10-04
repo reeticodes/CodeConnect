@@ -14,10 +14,10 @@ const AnnouncementSchema = new Schema ({
     type: Date,
     default: Date.now
   },
-  imageURL: {
-   originalname: String,
-   filename: String,
-   contentType: String
-  } 
+  // imageURL: {
+  //  originalname: String,
+  //  filename: String,
+  //  contentType: String
+  // } 
   });
 module.exports = mongoose.model('announcements', AnnouncementSchema)

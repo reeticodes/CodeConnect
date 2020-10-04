@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth')
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 const Posts = require('../../models/Posts');
+const Announcements = require('../../models/Announcements')
 const { route } = require('./auth');
 //@route POST api/posts
 //@desc Create a post 
@@ -60,7 +61,7 @@ router.get('/',async(req,res)=>{
 //@route  GET api/posts/:id
 //@desc   Get posts by id
 //@access Private
-router.get('/:id', async (req, res) => {
+router.get('/postId/:id', async (req, res) => {
   try {
     const post = await Posts.findById(req.params.id)
     //.sort({ date: -1 });
@@ -301,5 +302,67 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
 }
 );
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+router.get('/getannouncements', async (req, res) => {
+  try {
+    console.log("im hit dude1")
+    const announcements = await Announcements.find().sort({ date: -1 });
+    res.json(announcements);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error')
+  }
+})
+router.delete('/announcements/:id', auth, async (req, res) => {
+  try {
+    console.log('delete me is hit')
+    const announcement = await Announcements.findById(req.params.id)
+    if (!announcement) {
+      return res.status(404).send("announcement not found");
+    }
+    const admin = await User.findById(req.user.id).select('-password');
+    if (admin.admin === false)
+      return res.status(400).send("Admin authentiction required")
 
+    await announcement.remove();
+    res.json({ msg: "announcement removed" })
+
+
+  } catch (err) {
+    console.log(err);
+    if (err.kind === 'ObjectId')
+      return res.status(404).send("ann not found");
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+
+
+router.post('/announcements', [auth,[
+  check('title', 'Title is required').not().isEmpty()
+]], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() })
+  }
+  try {
+    const admin = await User.findById(req.user.id).select('-password');
+    if (admin.admin === false)
+      return res.status(400).send("Admin authentiction required")
+
+    const newAnnouncement = new Announcements({
+      title: req.body.title,
+      desc: req.body.desc,
+    })
+
+    const announcement = await newAnnouncement.save();
+    res.json(announcement);
+
+  }
+  catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error')
+  }
+})
 module.exports = router;

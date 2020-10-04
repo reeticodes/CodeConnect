@@ -123,7 +123,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     });
     dispatch(setAlert(edit ? 'Profile Updated !': 'Profile Created !', 'success'));
     if(!edit) {
-      history.push('/feed');
+      history.push('/posts');
     }
   } catch (err) {
     const errors = err.response.data.errors;

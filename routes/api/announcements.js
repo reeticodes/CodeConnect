@@ -19,33 +19,33 @@ const path = require('path')
 
 //***************************************************************************************** */
 
-const conn = mongoose.connection;
-    let gfs;
+// const conn = mongoose.connection;
+//     let gfs;
 
-    conn.once('open', ()=>{
-      gfs = Grid(conn.db, mongoose.mongo);
-      gfs.collection;
-    })
+//     conn.once('open', ()=>{
+//       gfs = Grid(conn.db, mongoose.mongo);
+//       gfs.collection;
+//     })
 
-    const storage = new GridFsStorage({
-      url: mongoURI,
-      file: (req, file) =>{
-        return new Promise((resolve, reject) => {
-          crypto.randomBytes(16, (err,buf) => {
-            if(err) {
-              return reject(err);
-            }
-            const filename = buf.toString('hex') + path.extname(file.originalname);
-            const fileInfo = {
-              filename: filename,
-              bucketName : 'uploads'
-            };
-            resolve(fileInfo);
-          });
-        });
-      }
-    });
-    const upload = multer({storage})
+//     const storage = new GridFsStorage({
+//       url: mongoURI,
+//       file: (req, file) =>{
+//         return new Promise((resolve, reject) => {
+//           crypto.randomBytes(16, (err,buf) => {
+//             if(err) {
+//               return reject(err);
+//             }
+//             const filename = buf.toString('hex') + path.extname(file.originalname);
+//             const fileInfo = {
+//               filename: filename,
+//               bucketName : 'uploads'
+//             };
+//             resolve(fileInfo);
+//           });
+//         });
+//       }
+//     });
+//     const upload = multer({storage})
   
 
 
@@ -82,51 +82,51 @@ const conn = mongoose.connection;
 //   }
 // })
 
-router.post('/',auth,async(req,res)=>{
-  const errors = validationResult(req);
-  if(!errors.isEmpty()){
-    return res.status(400).json({errors: errors.array()})
-  }
-  try{
-    const admin =  await User.findById(req.user.id).select('-password');
-    if(admin.admin == false)
-    return res.status(400).send("Admin authentiction required")
+// router.post('/',auth,async(req,res)=>{
+//   const errors = validationResult(req);
+//   if(!errors.isEmpty()){
+//     return res.status(400).json({errors: errors.array()})
+//   }
+//   try{
+//     const admin =  await User.findById(req.user.id).select('-password');
+//     if(admin.admin == false)
+//     return res.status(400).send("Admin authentiction required")
 
-    const newAnnouncement = new Announcements({
-      title : req.body.title,
-      desc : req.body.desc,
-    })
+//     const newAnnouncement = new Announcements({
+//       title : req.body.title,
+//       desc : req.body.desc,
+//     })
 
-    const announcement = await newAnnouncement.save();
-    res.json(announcement);
+//     const announcement = await newAnnouncement.save();
+//     res.json(announcement);
 
-  }
-  catch(err)
-  {   
-    console.error(err.message);
-    res.status(500).send('Server error')
-  }
-})
+//   }
+//   catch(err)
+//   {   
+//     console.error(err.message);
+//     res.status(500).send('Server error')
+//   }
+// })
 
 
-router.get('/', async(req,res)=>{
-  try {
-    const announcements  =  await Announcements.find().sort({date:-1});
-    res.json(announcements);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error')
-  }
-})
+// router.get('/', async(req,res)=>{
+//   try {
+//     const announcements  =  await Announcements.find().sort({date:-1});
+//     res.json(announcements);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send('Server error')
+//   }
+// })
 
-router.get('/:id', async(req,res)=>{
-  try {
-    const announcement = await Announcements.findById(req.params.id);
+// router.get('/:id', async(req,res)=>{
+//   try {
+//     const announcement = await Announcements.findById(req.params.id);
 
-    if(!announcement)
-    return res.status(404).send("Announcement not found");
+//     if(!announcement)
+//     return res.status(404).send("Announcement not found");
 
-    res.json(announcement);
+//     res.json(announcement);
     // gfs.findOne({filename: announcement.imageURL.filename}, (err,file)=>{
     //   if(err||!file)
     //   {
@@ -138,37 +138,37 @@ router.get('/:id', async(req,res)=>{
     
     
 
-  } catch (err) {
-    if(err.kind == 'ObjectId')
-    return res.status(404).send("Announcement not found");
-    console.error(err.message);
-    res.status(500).send('Server error!!');
-  }
-})
+//   } catch (err) {
+//     if(err.kind == 'ObjectId')
+//     return res.status(404).send("Announcement not found");
+//     console.error(err.message);
+//     res.status(500).send('Server error!!');
+//   }
+// })
 
 
 
-router.delete('/:id', auth, async (req, res) => {
-  try {
-    const announcement = await Announcements.findById(req.params.id)
-    if(!announcement){
-      return res.status(404).send("announcement not found");
-    }
-   const admin =  await User.findById(req.user.id).select('-password');
-    if(admin.admin == false)
-    return res.status(400).send("Admin authentiction required")
+// router.delete('/:id', auth, async (req, res) => {
+//   try {
+//     const announcement = await Announcements.findById(req.params.id)
+//     if(!announcement){
+//       return res.status(404).send("announcement not found");
+//     }
+//    const admin =  await User.findById(req.user.id).select('-password');
+//     if(admin.admin == false)
+//     return res.status(400).send("Admin authentiction required")
     
-    await announcement.remove();
-    res.json({msg:"announcement removed"})
+//     await announcement.remove();
+//     res.json({msg:"announcement removed"})
     
     
-  } catch (err) {
-    if (err.kind === 'ObjectId')
-      return res.status(404).send("Post not found");
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-});
+//   } catch (err) {
+//     if (err.kind === 'ObjectId')
+//       return res.status(404).send("Post not found");
+//     console.error(err.message);
+//     res.status(500).send('Server error');
+//   }
+// });
 
 
 module.exports = router;

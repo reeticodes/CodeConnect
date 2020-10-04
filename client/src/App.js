@@ -27,6 +27,9 @@ import Profile from "./components/Profile/Profile";
 import Posts from "./components/posts/Post";
 import Post from "./components/post/Post";
 
+
+import Announcement from "./components/announcements/CreateAnnouncement"
+
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
@@ -81,6 +84,7 @@ const App = () => {
 								/>
 								<PrivateRoute exact path="/posts" component={Posts} />
 								<PrivateRoute exact path="/posts/:id" component={Post} />
+								<PrivateRoute exact path ="/createAnnouncement" component={Announcement} />
 							</Switch>
 						</section>
 					</Fragment>

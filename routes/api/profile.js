@@ -18,6 +18,7 @@ const normalize = require('normalize-url');
 //@access Public
 router.get('/me',auth,async (req,res) => {
   try{
+    
     const profile = await Profile.findOne({user : req.user.id}).populate('user');
 
     if(!profile){
@@ -127,6 +128,7 @@ router.get('/',async(req,res) => {
 //@access   Public
 router.get('/user/:user_id', async (req, res) => {
   try {
+    console.log("im hit dude2")
     const profile = await Profile.findOne(
         {user: req.params.user_id}
       ).populate('user');

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 import open from "../../img/open.svg";
 import "./PostForm.css";
+import Announcement from "../announcements/Announcement";
 
 const PostForm = ({ addPost }) => {
 	const [text, setText] = useState("");
@@ -35,30 +36,7 @@ const PostForm = ({ addPost }) => {
 			<div className="announcement-section">
 				<span className="page-headers">Announcements</span>
 				<div>
-					<div className="announcement-item">
-						<h4>
-							<img src={open} alt="!" />
-							Experimental Build
-						</h4>
-						<span className="span-15x">
-							This is a code sharing platform for students. Connect with your
-							peer and excel in coding. Discuss about lated technologies and
-							improve your skills. To contribute to this project visit our
-							GitHub organisation.
-						</span>
-					</div>
-					<div className="announcement-item">
-						<h4>
-							<img src={open} alt="!" />
-							Contribution Guidelines
-						</h4>
-						<span className="span-15x">
-							This is a code sharing platform for students. Connect with your
-							peer and excel in coding. Discuss about lated technologies and
-							improve your skills. To contribute to this project visit our
-							GitHub organisation.
-						</span>
-					</div>
+					<Announcement/>
 				</div>
 			</div>
 		</div>
