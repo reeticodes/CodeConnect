@@ -11,7 +11,7 @@ const EditProfile = ({
 	history,
 	deleteAccount,
 	getCurrentProfile,
-	profile:{profile,loading}
+	profile: { profile, loading },
 }) => {
 	const [formData, setFormData] = useState({
 		name: " ",
@@ -87,14 +87,17 @@ const EditProfile = ({
 					</Fragment>
 				)}
 
-				<form className="form" onSubmit={(e) => {
-					onSubmit(e)
-					}}>
+				<form
+					className="form"
+					onSubmit={(e) => {
+						onSubmit(e);
+					}}
+				>
 					<div className="side__float">
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Name"
+								placeholder="First Name Last Name"
 								name="name"
 								value={name}
 								onChange={(e) => onChange(e)}
@@ -104,27 +107,28 @@ const EditProfile = ({
 						<div className="form-group">
 							<select name="status" value={status} onChange={(e) => onChange(e)}>
 								<option value="0">Select Year</option>
-								<option value="First-Year">First Year</option>
-								<option value="Second-Year"> Second Year</option>
-								<option value="Third-Year">Third-Year</option>
-								<option value="Final-Year">Final-Year</option>
+								<option value="First Year">First Year</option>
+								<option value="Second Year"> Second Year</option>
+								<option value="Third Year">Third Year</option>
+								<option value="Final Year">Final Year</option>
 							</select>
 							<span className="form-text">Student Year</span>
 						</div>
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Intern at?"
+								placeholder="Intern at"
 								name="company"
+								placeholder="Organisation"
 								value={company}
 								onChange={(e) => onChange(e)}
 							/>
-							<span className="form-text">Organistion</span>
+							<span className="form-text">Intern at</span>
 						</div>
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Personal Website"
+								placeholder="https://"
 								name="website"
 								value={website}
 								onChange={(e) => onChange(e)}
@@ -134,7 +138,7 @@ const EditProfile = ({
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Location"
+								placeholder="Mumbai"
 								name="location"
 								value={location}
 								onChange={(e) => onChange(e)}
@@ -144,7 +148,7 @@ const EditProfile = ({
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="c, c++, javascript"
+								placeholder="HTML5, CSS3, JavaScript"
 								name="skills"
 								value={skills}
 								onChange={(e) => onChange(e)}
@@ -154,7 +158,7 @@ const EditProfile = ({
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Github Username"
+								placeholder="octocat"
 								name="githubusername"
 								value={githubusername}
 								onChange={(e) => onChange(e)}
@@ -163,7 +167,7 @@ const EditProfile = ({
 						</div>
 						<div className="form-group">
 							<textarea
-								placeholder="A short bio of yourself"
+								placeholder="..."
 								name="bio"
 								value={bio}
 								onChange={(e) => onChange(e)}
@@ -176,7 +180,7 @@ const EditProfile = ({
 							onClick={() => toggleSocialInputs(!displaySocialInputs)}
 							type="button"
 							id="drop-social"
-							className="social__media"
+							className="adobe__primary"
 						>
 							{displaySocialInputs ? "Collapse Social Media Links" : "Expand Social Media Links"}
 						</button>
@@ -198,7 +202,7 @@ const EditProfile = ({
 									<i class="fa fa-facebook-official"></i>
 									<input
 										type="text"
-										placeholder="Facebook URL"
+										placeholder="https://facebook.com/"
 										name="facebook"
 										value={facebook}
 										onChange={(e) => onChange(e)}
@@ -208,7 +212,7 @@ const EditProfile = ({
 									<i class="fa fa-youtube-play"></i>
 									<input
 										type="text"
-										placeholder="YouTube URL"
+										placeholder="https://youtube.com/"
 										name="youtube"
 										value={youtube}
 										onChange={(e) => onChange(e)}
@@ -219,7 +223,7 @@ const EditProfile = ({
 									<i class="fa fa-linkedin-square"></i>
 									<input
 										type="text"
-										placeholder="Linkedin URL"
+										placeholder="https://linkedin.com/"
 										name="linkedin"
 										value={linkedin}
 										onChange={(e) => onChange(e)}
@@ -229,7 +233,7 @@ const EditProfile = ({
 									<i class="fa fa-instagram"></i>
 									<input
 										type="text"
-										placeholder="Instagram URL"
+										placeholder="https://instagram.com/"
 										name="instagram"
 										value={instagram}
 										onChange={(e) => onChange(e)}
@@ -238,12 +242,12 @@ const EditProfile = ({
 							</Fragment>
 						)}
 					</div>
-					<div className="one__line__center">
-						<button type="submit" className="confirm__changes">
+					<div className="horizontal__group__danger">
+						<button type="submit" className="github__primary">
 							Update Changes
 						</button>
 						<Link id="back-acc" to="/dashboard">
-							<button className="head__back">Go Back</button>
+							<button className="github__neutral">Go Back</button>
 						</Link>
 						<DeleteModal deleteAccount={deleteAccount} />
 					</div>

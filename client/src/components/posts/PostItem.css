@@ -1,9 +1,10 @@
 .post {
 	margin: 20px;
 	border: 1px solid var(--git-card-border-blue);
-	border-radius: 4px;
+	border-radius: 10px;
 	overflow: hidden;
-	transition: box-shadow 0.2s ease;
+	transition: box-shadow 0.1s ease;
+	background-color: #fff;
 }
 
 .post:hover {
@@ -22,6 +23,7 @@
 
 .post > :nth-child(1) > :nth-child(2) {
 	color: #24292e;
+	font-weight: 600;
 }
 
 .post > :nth-child(1) > :nth-child(2):hover {
@@ -50,17 +52,15 @@
 }
 
 .post > :nth-child(3) {
-	/* border-top: 1px solid rgba(0, 0, 0, 0.151); */
 	border-top: 1px solid var(--git-card-border-blue);
 	background-color: var(--git-card-background-blue);
 }
 
-.post > :nth-child(3) > :nth-child(3) > button,
-.post > :nth-child(3) > * {
+.post > :nth-child(3) > button,
+.post > :nth-child(3) > a > button {
 	padding: 5px 15px 8px 15px;
 	background: transparent;
 	outline: none;
-	/* border-right: 1px solid rgba(0, 0, 0, 0.151); */
 	border-right: 1px solid var(--git-card-border-blue);
 	font-size: 16px;
 	height: 40px;

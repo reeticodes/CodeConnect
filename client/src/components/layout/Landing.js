@@ -23,12 +23,12 @@ const Landing = ({ isAuthenticated }) => {
 				</div>
 			</div>
 			<div className="banner-text">
-				<p>GET HELP FROM PEERS AND EXCEL IN CODE.</p>
+				<p>CONNECT & COLLAB WITH NEW HORIZON COMMUNITY.</p>
 			</div>
 			<div className="land-shade">
-				<div>Lorem ipsum dolor sit amet eiusmod tempor</div>
-				<div>Consectetur adipiscing elit sed do</div>
-				<div>Quis nostrud exercitation ullamco laboris</div>
+				<div>Get help from peers and excel in code</div>
+				<div>Stay updated with recent technologies</div>
+				<div>New Horizon Computer Department at a glance</div>
 			</div>
 		</div>
 	);

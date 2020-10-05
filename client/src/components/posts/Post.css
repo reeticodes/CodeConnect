@@ -5,6 +5,7 @@
 .feed-space {
 	display: flex;
 	flex-direction: row-reverse;
+	background-color: #e1e9ee;
 }
 
 .feed-space > :nth-child(2) {
@@ -14,6 +15,7 @@
 
 #workspace {
 	min-height: calc(100vh - 335px);
+	background: #e1e9ee;
 }
 
 .end-of-feed {

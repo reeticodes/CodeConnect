@@ -18,8 +18,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			</span>
 			<span>
 				<Link to="/dashboard">DASHBOARD</Link>
-			
-				<Link to="/" onClick={logout}>LOGOUT</Link>
+
+				<Link to="/" onClick={logout}>
+					LOGOUT
+				</Link>
 			</span>
 		</div>
 	);
@@ -37,7 +39,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 					<Link to="/profiles">STUDENTS</Link>
 				</li>
 				<li>
-					<Link>GITHUB</Link>
+					<a href="https://nhitm.ac.in/" target="_blank" rel="noopener">
+						NEW HORIZON
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -46,14 +50,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 	return (
 		<div>
 			<div className="top-panel">
-				<span>{isAuthenticated ? null : "SIGN IN"}</span>
+				<span>{isAuthenticated ? null : <Link to="/">SIGN IN</Link>}</span>
 				<span>
 					{isAuthenticated ? (
 						<a href="#!" onClick={logout}>
 							SIGN OUT
 						</a>
 					) : (
-						"CREATE ACCOUNT"
+						<Link to="/register">CREATE ACCOUNT</Link>
 					)}
 				</span>
 			</div>
@@ -72,12 +76,20 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			</nav>
 			{isMinNavOpen ? (
 				<div className="min__nav__content">
-					<a href=".">HOME</a>
-					{isAuthenticated ? "" : <a href=".">REGISTER</a>}
-					<a href=".">STUDENTS</a>
-					{isAuthenticated ? <a href=".">DASHBOARD</a> : ""}
-					<a href=".">GITHUB</a>
-					{isAuthenticated ? <a href=".">LOGOUT</a> : ""}
+					<Link to="/">FEED</Link>
+					{isAuthenticated ? "" : <Link to="/register">REGISTER</Link>}
+					<Link to="/profiles">STUDENTS</Link>
+					{isAuthenticated ? <Link to="/dashboard">DASHBOARD</Link> : ""}
+					<a href="https://nhitm.ac.in/" target="_blank" rel="noopener">
+						NEW HORIZON
+					</a>
+					{isAuthenticated ? (
+						<a href="#!" onClick={logout}>
+							LOGOUT
+						</a>
+					) : (
+						""
+					)}
 				</div>
 			) : null}
 		</div>

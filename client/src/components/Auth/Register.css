@@ -1,6 +1,6 @@
 .Register {
 	min-height: calc(100vh - 329px);
-	background: #ffff70;
+	background: #bda0e6;
 	box-sizing: border-box;
 	padding: 40px;
 	font-family: "Helvetica 93 Black Extended";
@@ -32,7 +32,7 @@
 }
 
 .Register .form-group span {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 #Register-button {

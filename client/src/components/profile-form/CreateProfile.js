@@ -53,30 +53,48 @@ const CreateProfile = ({ createProfile, history }) => {
 				<form className="create-profile-form" onSubmit={(e) => onSubmit(e)}>
 					<div className="side__float">
 						<div className="form-group">
-							<input type="text" name="name" value={name} onChange={(e) => onChange(e)} />
+							<input
+								type="text"
+								placeholder="First Name Last Name"
+								name="name"
+								value={name}
+								onChange={(e) => onChange(e)}
+							/>
 							<span className="form-text">Name</span>
 						</div>
 						<div className="form-group">
 							<select name="status" value={status} onChange={(e) => onChange(e)}>
-								<option value="First-Year">First Year</option>
-								<option value="Second-Year"> Second Year</option>
-								<option value="Third-Year">Third Year</option>
-								<option value="Final-Year">Final Year</option>
+								<option value="First Year">First Year</option>
+								<option value="Second Year"> Second Year</option>
+								<option value="Third Year">Third Year</option>
+								<option value="Final Year">Final Year</option>
 							</select>
 							<span className="form-text">Student Year</span>
 						</div>
 						<div className="form-group">
-							<input type="text" name="company" value={company} onChange={(e) => onChange(e)} />
-							<span className="form-text">Organisation</span>
+							<input
+								type="text"
+								name="company"
+								placeholder="Organisation"
+								value={company}
+								onChange={(e) => onChange(e)}
+							/>
+							<span className="form-text">Intern at</span>
 						</div>
 						<div className="form-group">
-							<input type="text" name="website" value={website} onChange={(e) => onChange(e)} />
+							<input
+								type="text"
+								name="website"
+								value={website}
+								placeholder="https://"
+								onChange={(e) => onChange(e)}
+							/>
 							<span className="form-text">Website</span>
 						</div>
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="Boston, MA"
+								placeholder="Mumbai"
 								name="location"
 								value={location}
 								onChange={(e) => onChange(e)}
@@ -91,12 +109,12 @@ const CreateProfile = ({ createProfile, history }) => {
 								value={skills}
 								onChange={(e) => onChange(e)}
 							/>
-							<span className="form-text">Coding Skills</span>
+							<span className="form-text">Skill Set</span>
 						</div>
 						<div className="form-group">
 							<input
 								type="text"
-								placeholder="harshcut"
+								placeholder="octocat"
 								name="githubusername"
 								value={githubusername}
 								onChange={(e) => onChange(e)}
@@ -104,7 +122,12 @@ const CreateProfile = ({ createProfile, history }) => {
 							<span className="form-text">Github Username</span>
 						</div>
 						<div className="form-group">
-							<textarea name="bio" value={bio} onChange={(e) => onChange(e)}></textarea>
+							<textarea
+								name="bio"
+								placeholder="..."
+								value={bio}
+								onChange={(e) => onChange(e)}
+							></textarea>
 							<span className="form-text">Bio</span>
 						</div>
 					</div>
@@ -112,9 +135,9 @@ const CreateProfile = ({ createProfile, history }) => {
 						<button
 							onClick={() => toggleSocialInputs(!displaySocialInputs)}
 							type="button"
-							className="social__media"
+							className="adobe__primary"
 						>
-							Social Media
+							{displaySocialInputs ? "Collapse Social Media Links" : "Expand Social Media Links"}
 						</button>
 					</div>
 					<div className="side__float">
@@ -135,7 +158,7 @@ const CreateProfile = ({ createProfile, history }) => {
 									<i class="fa fa-facebook-official"></i>
 									<input
 										type="text"
-										placeholder="Facebook URL"
+										placeholder="https://facebook.com/"
 										name="facebook"
 										value={facebook}
 										onChange={(e) => onChange(e)}
@@ -146,7 +169,7 @@ const CreateProfile = ({ createProfile, history }) => {
 									<i class="fa fa-youtube-play"></i>
 									<input
 										type="text"
-										placeholder="YouTube URL"
+										placeholder="https://youtube.com/"
 										name="youtube"
 										value={youtube}
 										onChange={(e) => onChange(e)}
@@ -157,7 +180,7 @@ const CreateProfile = ({ createProfile, history }) => {
 									<i class="fa fa-linkedin-square"></i>
 									<input
 										type="text"
-										placeholder="Linkedin URL"
+										placeholder="https://linkedin.com/"
 										name="linkedin"
 										value={linkedin}
 										onChange={(e) => onChange(e)}
@@ -168,7 +191,7 @@ const CreateProfile = ({ createProfile, history }) => {
 									<i class="fa fa-instagram"></i>
 									<input
 										type="text"
-										placeholder="Instagram URL"
+										placeholder="https://instagram.com/"
 										name="instagram"
 										value={instagram}
 										onChange={(e) => onChange(e)}
@@ -178,8 +201,8 @@ const CreateProfile = ({ createProfile, history }) => {
 						)}
 					</div>
 					<div className="one__line__center">
-						<button type="submit" className="confirm__changes">
-							Submit
+						<button type="submit" className="github__primary">
+							Create Profile
 						</button>
 					</div>
 				</form>
