@@ -19,7 +19,7 @@ const Announcements = ({ auth, getAnnouncements, announcement:{announcements, lo
     <Spinner/> ) : (
       <Fragment>
 
-        {!auth.loading && auth.user.admin == true && (<Link to='/createAnnouncement'><button>Create Announcement</button></Link> )}
+        
         <div>
           {announcements.map((announcement) => (
             <AnnouncementItem key={announcement._id} announcement={announcement} />

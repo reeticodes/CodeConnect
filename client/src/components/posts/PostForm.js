@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 import { addAnnouncement } from "../../actions/announcements";
-import open from "../../img/open.svg";
 import "./PostForm.css";
 import Announcement from "../announcements/Announcement";
-import { Button } from "reactstrap";
 import { Fragment } from "react";
 
 const PostForm = ({auth, addPost, addAnnouncement }) => {
@@ -56,8 +54,8 @@ const PostForm = ({auth, addPost, addAnnouncement }) => {
 		<div className="post-form">
 			<div className="compose-section">
 				<span className="page-headers">Compose</span>
-		{!auth.loading && auth.user.admin == true && <Fragment><button onClick={(e)=> setbuttonState(!buttonState)} >Post/Announce</button></Fragment> }
-	{!auth.loading && auth.user.admin == true && <Fragment>{buttonState? Post : Announce}</Fragment> }
+		{!auth.loading && auth.user.admin === true && <Fragment><button onClick={(e)=> setbuttonState(!buttonState)} >Post/Announce</button></Fragment> }
+	{!auth.loading && auth.user.admin === true && <Fragment>{buttonState? Post : Announce}</Fragment> }
 				
 			</div>
 			<div className="announcement-section">
