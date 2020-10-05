@@ -54,7 +54,7 @@ const PostForm = ({auth, addPost, addAnnouncement }) => {
 		<div className="post-form">
 			<div className="compose-section">
 				<span className="page-headers">Compose</span>
-		{!auth.loading && auth.user.admin === true && <Fragment><button onClick={(e)=> setbuttonState(!buttonState)} >Post/Announce</button></Fragment> }
+	{!auth.loading && auth.user.admin ?<Fragment><button onClick={(e)=> setbuttonState(!buttonState)} >Post/Announce</button></Fragment>: <Fragment> {Post}</Fragment> }
 	{!auth.loading && auth.user.admin === true && <Fragment>{buttonState? Post : Announce}</Fragment> }
 				
 			</div>
