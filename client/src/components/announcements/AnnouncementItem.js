@@ -13,21 +13,23 @@ const AnnouncementItem = ({
 	showActions,
 }) => (
 	<Fragment>
-		<div className="AnnouncementItem__head">
-			<h3>
-				<img src={open} alt="!" />
-				{title}
-			</h3>
-			{!auth.loading && auth.user.admin === true && (
-				<button className="delete__announce" onClick={() => deleteAnnouncement(_id)}>
-					<span>🗑️</span>
-				</button>
-			)}
+		<div className="AnnouncementItem">
+			<div className="AnnouncementItem__head">
+				<h3>
+					<img src={open} alt="!" />
+					{title}
+				</h3>
+				{!auth.loading && auth.user.admin === true && (
+					<button className="delete__announce" onClick={() => deleteAnnouncement(_id)}>
+						<span>🗑️</span>
+					</button>
+				)}
+			</div>
+			<p className="AnnouncementItem__desc">{desc}</p>
+			<p className="text__small__gray">
+				Posted on <Moment format="YYYY/MM/DD">{date}</Moment>{" "}
+			</p>
 		</div>
-		<p className="AnnouncementItem__desc">{desc}</p>
-		<p className="text__small__gray">
-			Posted on <Moment format="YYYY/MM/DD">{date}</Moment>{" "}
-		</p>
 	</Fragment>
 );
 AnnouncementItem.defaultProps = {

@@ -58,10 +58,6 @@ const ProfileTop = ({
 		<div className="ProfileTop">
 			<img src={avatar} alt="avatar" />
 			<h3>{name}</h3>
-
-			{isAuthenticated && user._id !== auth.user._id && (
-				<Fragment>{isFollowed ? Followed : NotFollowed}</Fragment>
-			)}
 			<div className="followtag">
 				<svg
 					text="gray-light"
@@ -83,7 +79,9 @@ const ProfileTop = ({
 				{"·"}
 				<Link to={`/profile/following/${user._id}`}>{following.length} following</Link>
 			</div>
-
+			{isAuthenticated && user._id !== auth.user._id && (
+				<Fragment>{isFollowed ? Followed : NotFollowed}</Fragment>
+			)}
 			<div className="vertical__group__center">
 				{" "}
 				{isAuthenticated && auth.loading === false && auth.user._id === user._id && (

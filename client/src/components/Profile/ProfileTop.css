@@ -1,12 +1,18 @@
 .ProfileTop {
+	padding-left: 5%;
 	margin: 20px 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
 .ProfileTop > .buttonunfollow {
 	width: 180px;
+}
+
+.ProfileTop .github__neutral {
+	max-width: 200px;
 }
 
 .ProfileTop > .page-headers {
@@ -41,7 +47,7 @@
 	margin-bottom: 20px;
 	background-color: #f0f0f0;
 	border-radius: 9999px;
-	width: max-content;
+	width: 200px;
 }
 
 .ProfileTop > h3 {
@@ -63,6 +69,11 @@
 
 .followtag a:hover {
 	color: #0366d6;
+}
+
+.ProfileTop .github__neutral {
+	margin: 0 auto;
+	width: 200px;
 }
 
 .icon-container {
@@ -144,7 +155,7 @@
 	border-radius: 6px;
 	outline: none;
 	transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-	margin-top: 20px;
+	/* margin-top: 20px; */
 }
 
 .buttonfollow {
@@ -168,9 +179,5 @@
 	border-radius: 6px;
 	outline: none;
 	transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-	margin-top: 20px;
+	/* margin-top: 20px; */
 }
-
-/* .buttonunfollow:active {
-	top: 0.1em;
-} */

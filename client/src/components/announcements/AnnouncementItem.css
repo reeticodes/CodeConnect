@@ -5,6 +5,10 @@
 		"Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.AnnouncementItem {
+	margin-bottom: 30px;
+}
+
 .AnnouncementItem__head {
 	display: flex;
 	justify-content: space-between;
