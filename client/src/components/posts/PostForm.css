@@ -5,8 +5,8 @@
 	border-left: 1px solid var(--git-section-divider);
 }
 
-.post-form div {
-	margin-bottom: 20px;
+.post-form .page-headers {
+	margin-right: 20px;
 }
 
 .post-form form textarea {
@@ -28,7 +28,24 @@
 	outline: var(--adobe-blue);
 }
 
-.post-form input {
+.post-form form input {
+	width: calc(100% - 20px);
+	margin: 20px 0 0 0;
+	border-radius: 4px;
+	padding: 5px;
+	outline: none;
+	border: 1px solid rgb(225, 228, 232);
+	font-size: 16px;
+	color: #24292e;
+	font-family: inherit;
+}
+
+.post-form input:focus {
+	border: 1px solid var(--adobe-blue);
+	outline: var(--adobe-blue);
+}
+
+.form-end-btn {
 	outline: none;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
 		"Open Sans", "Helvetica Neue", sans-serif;
@@ -43,7 +60,7 @@
 	transition: all 0.2s ease;
 }
 
-.post-form input:hover {
+.form-end-btn:hover {
 	background-color: #323232;
 	color: #fff;
 }
@@ -53,8 +70,8 @@
 	border-bottom: 2px solid var(--git-section-divider);
 }
 
-.announcement-section > :nth-child(2) {
-	padding-top: 20px;
+.announcement-section {
+	margin-top: 20px;
 }
 
 .announcement-item > :nth-child(1) {
@@ -63,6 +80,10 @@
 	gap: 10px;
 	padding-bottom: 10px;
 	color: #24292e;
+}
+
+.announcement-section > :nth-child(2) {
+	padding-top: 20px;
 }
 
 @media screen and (max-width: 900px) {

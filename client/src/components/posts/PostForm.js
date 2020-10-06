@@ -30,7 +30,9 @@ const PostForm = ({ auth, addPost, addAnnouncement }) => {
 				onChange={(e) => setText(e.target.value)}
 				required
 			/>
-			<input type="submit" value="Submit" />
+			<button className="form-end-btn" type="submit" value="Submit">
+				Submit
+			</button>
 		</form>
 	);
 	const Announce = (
@@ -42,17 +44,15 @@ const PostForm = ({ auth, addPost, addAnnouncement }) => {
 				setdesc(desc);
 			}}
 		>
-			<textarea
+			<input
 				value={title}
 				name="title"
-				placeholder="Type a Title"
-				cols="90"
-				rows="20"
+				placeholder="Title"
 				onChange={(e) => {
 					settitle(e.target.value);
 				}}
 				required
-			></textarea>
+			/>
 			<textarea
 				value={desc}
 				onChange={(e) => {
@@ -61,9 +61,11 @@ const PostForm = ({ auth, addPost, addAnnouncement }) => {
 				name="desc"
 				id=""
 				cols="30"
-				rows="30"
+				rows="5"
 			></textarea>
-			<input type="submit" name="Submit" />
+			<button className="form-end-btn" type="submit" name="Submit">
+				Submit
+			</button>
 		</form>
 	);
 
@@ -73,7 +75,9 @@ const PostForm = ({ auth, addPost, addAnnouncement }) => {
 				<span className="page-headers">Compose</span>
 				{!auth.loading && auth.user.admin ? (
 					<Fragment>
-						<button onClick={(e) => setbuttonState(!buttonState)}>Post/Announce</button>
+						<button className="adobe__quiet" onClick={(e) => setbuttonState(!buttonState)}>
+							{buttonState ? "Switch to Announcement" : "Switch to Post"}
+						</button>
 					</Fragment>
 				) : (
 					<Fragment> {Post}</Fragment>
