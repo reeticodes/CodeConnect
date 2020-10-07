@@ -29,7 +29,7 @@ const DeleteModal = ({ deleteAccount }) => {
 
 	return (
 		<div className="DeleteModal">
-			<button onClick={(e) => setModal(true)} className="danger__delete">
+			<button onClick={(e) => setModal(true)} className="github__danger">
 				Danger Zone
 			</button>
 			<Modal
@@ -40,14 +40,17 @@ const DeleteModal = ({ deleteAccount }) => {
 			>
 				<h2>Are you sure?</h2>
 				<p>
-					This action <strong>CANNOT</strong> be undone.
+					This action connot be undone. Deleting the <br /> user will delete all of its data.
 				</p>
-				<button className="confirm__detele" onClick={(e) => deleteAccount()}>
-					Confirm Delete
-				</button>
-				<button className="delete__cancel" onClick={(e) => setModal(false)}>
-					Go Back
-				</button>
+
+				<div className="vertical__group__center">
+					<button className="github__neutral" onClick={(e) => setModal(false)}>
+						Go Back
+					</button>
+					<button className="github__warning" onClick={(e) => deleteAccount()}>
+						Confirm Delete
+					</button>
+				</div>
 			</Modal>
 		</div>
 	);

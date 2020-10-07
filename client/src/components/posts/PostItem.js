@@ -37,14 +37,14 @@ const PostItem = ({
 			<button onClick={() => removeLike(_id)} type="button">
 				<span>👎 </span>
 			</button>
-			<button>
-				<Link to={`/posts/${_id}`}>
-					<span>🤝</span>
-				</Link>
-			</button>
+			<Link to={`/posts/${_id}`}>
+				<button>
+					<span>💬</span>
+				</button>
+			</Link>
 			{!auth.loading && user === auth.user._id && (
 				<button onClick={() => deletePost(_id)} type="button">
-					<span>🚫</span>
+					<span>🗑️</span>
 				</button>
 			)}
 		</div>
@@ -68,6 +68,4 @@ const mapStateToProps = (state) => ({
 	auth: state.auth,
 });
 
-export default connect(mapStateToProps, { addLike, removeLike, deletePost })(
-	PostItem
-);
+export default connect(mapStateToProps, { addLike, removeLike, deletePost })(PostItem);
