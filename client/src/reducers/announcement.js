@@ -14,6 +14,7 @@ const initialState = {
 
 export default function( state = initialState, action ) {
   const{ type, payload } = action;
+
   switch(type) {
     case GET_ANNOUNCEMENTS : 
     return {
@@ -24,7 +25,7 @@ export default function( state = initialState, action ) {
   case ADD_ANNOUNCEMENT:
     return{
       ...state,
-      announcements: payload,
+      announcements: [payload, ...state.announcements],
       loading:false
       }
   case DELETE_ANNOUNCEMENT:
