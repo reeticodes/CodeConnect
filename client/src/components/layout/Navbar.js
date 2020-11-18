@@ -76,7 +76,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			</nav>
 			{isMinNavOpen ? (
 				<div className="min__nav__content">
-					<Link to="/">FEED</Link>
+					{isAuthenticated ? <Link to="/">FEED</Link> : <Link to="/">HOME</Link>}
 					{isAuthenticated ? "" : <Link to="/register">REGISTER</Link>}
 					<Link to="/profiles">STUDENTS</Link>
 					{isAuthenticated ? <Link to="/dashboard">DASHBOARD</Link> : ""}
