@@ -63,7 +63,8 @@ const CreateProfile = ({ createProfile, history }) => {
 							<span className="form-text">Name</span>
 						</div>
 						<div className="form-group">
-							<select name="status" value={status} onChange={(e) => onChange(e)}>
+							<select name="status" value={status} defaultValue="" onChange={(e) => onChange(e)}>
+								 <option hidden value="">Select Your Year</option>
 								<option value="First Year">First Year</option>
 								<option value="Second Year"> Second Year</option>
 								<option value="Third Year">Third Year</option>

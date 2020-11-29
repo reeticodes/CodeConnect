@@ -7,15 +7,18 @@ import PostItem from "../posts/PostItem";
 // import "../posts/Post.css";
 import "./ProfilePosts.css";
 
-const ProfilePosts = ({ getprofileposts, profile, post: { posts, loading }, userid }) => {
+const ProfilePosts = ({   isAuthenticated,getprofileposts, profile, post: { posts, loading }, userid }) => {
+	const noposts = false;
 	useEffect(() => {
+		
 		getprofileposts(userid);
+		
 	}, [getprofileposts]);
+
 
 	return loading ? (
 		<Spinner />
-	) : (
-		<Fragment>
+	) : (isAuthenticated && posts.length>0 && 	<Fragment>
 			<div className="ProfilePosts">
 				<span className="page-headers">User's Posts</span>
 				<div className="posts">
@@ -25,6 +28,7 @@ const ProfilePosts = ({ getprofileposts, profile, post: { posts, loading }, user
 				</div>
 			</div>
 		</Fragment>
+
 	);
 };
 
@@ -34,8 +38,10 @@ ProfilePosts.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
+	isAuthenticated: state.auth.isAuthenticated,
 	post: state.post,
 	profile: state.profile,
+	
 });
 
 export default connect(mapStateToProps, { getprofileposts })(ProfilePosts);

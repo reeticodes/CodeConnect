@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getGithubRepos } from "../../actions/profile";
 import "./ProfileGithub.css";
 
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
+	
 	useEffect(() => {
+	
 		getGithubRepos(username);
 	}, [getGithubRepos, username]);
 
 	return (
-		<div className="ProfileGithub">
+		
+			repos.length>0 && 
+				<Fragment><div className="ProfileGithub">
 			<span className="page-headers">GitHub Repositories</span>
 			<div>
 				{repos.map((repo) => (
@@ -52,7 +56,10 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
 					</div>
 				))}
 			</div>
-		</div>
+		</div> </Fragment>
+			
+			
+		
 	);
 };
 

@@ -53,6 +53,8 @@ if(!errors.isEmpty()){
     } = req.body;
     //Build profile object
     const profileFields = {};
+    
+    
     profileFields.user = req.user.id;
     if(name) profileFields.name = name;
     if (company) profileFields.company = company;
@@ -65,11 +67,7 @@ if(!errors.isEmpty()){
       profileFields.skills = skills.toString().split(',').map((skill) => ' ' + skill.trim()+ ' ');
     }
     const user = await User.findById(req.user.id).select('-password');
-    if(user.email=='reetisharma192@nhitm.ac.in')
-      profileFields.avatar = `https://avatars.dicebear.com/api/female/${user._id}.svg`;
-    else if (user.email == 'harshkarande192@nhitm.ac.in')
-    profileFields.avatar = `https://avatars.dicebear.com/api/male/${user._id}.svg`;
-    else
+    
       profileFields.avatar = `https://avatars.dicebear.com/api/bottts/${user._id}.svg`;
   
     //Build social object

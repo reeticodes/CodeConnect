@@ -1,21 +1,21 @@
-const express = require('express');
-const router = express.Router();
-const { check, validationResult} = require('express-validator');
-const auth = require('../../middleware/auth')
-const  Announcements = require('../../models/Announcements')
-const User = require('../../models/User');
+// const express = require('express');
+// const router = express.Router();
+// const { check, validationResult} = require('express-validator');
+// const auth = require('../../middleware/auth')
+// const  Announcements = require('../../models/Announcements')
+// const User = require('../../models/User');
 
-const connectDB = require('../../config/db')
+// const connectDB = require('../../config/db')
 
-const mongoose = require('mongoose');
-const GridFsStorage = require('multer-gridfs-storage');
-const Grid = require('gridfs-stream');
-eval(`Grid.prototype.findOne = ${Grid.prototype.findOne.toString().replace('nextObject', 'next')}`);
-const crypto = require('crypto')
-const config = require('config');
-const mongoURI = config.get('mongoURI');
-const multer = require('multer');
-const path = require('path')
+// const mongoose = require('mongoose');
+// const GridFsStorage = require('multer-gridfs-storage');
+// const Grid = require('gridfs-stream');
+// eval(`Grid.prototype.findOne = ${Grid.prototype.findOne.toString().replace('nextObject', 'next')}`);
+// const crypto = require('crypto')
+// const config = require('config');
+// const mongoURI = config.get('mongoURI');
+// const multer = require('multer');
+// const path = require('path')
 
 
 
@@ -173,4 +173,4 @@ const path = require('path')
 // });
 
 
-module.exports = router;
+// module.exports = router;

@@ -4,6 +4,8 @@ import { Link, Redirect } from "react-router-dom";
 import "./ProfileTop.css";
 import { followUser, unfollowUser, getFolllowers, getFollowing } from "../../actions/profile";
 import { connect } from "react-redux";
+import adminlogo from '../../img/icons8-user-shield-64.ico'
+
 
 const ProfileTop = ({
 	isAuthenticated,
@@ -15,6 +17,7 @@ const ProfileTop = ({
 	let [isFollowed, setFollow] = useState(false);
 
 	useEffect(() => {
+		if(isAuthenticated)
 		check();
 	}, []);
 	function check() {
@@ -57,7 +60,7 @@ const ProfileTop = ({
 	return (
 		<div className="ProfileTop">
 			<img src={avatar} alt="avatar" />
-			<h3>{name}</h3>
+			<h3>{name} {user.admin === true && <Fragment><img src={adminlogo} alt="admin logo" style={{height: '30px'}, {width:'30px'}}/></Fragment>}</h3>
 			<div className="followtag">
 				<svg
 					text="gray-light"
@@ -142,6 +145,7 @@ const mapStateToProps = (state) => ({
 	followers: state.profile.followers,
 	following: state.profile.following,
 	auth: state.auth,
+
 	isAuthenticated: state.auth.isAuthenticated,
 });
 export default connect(mapStateToProps, {

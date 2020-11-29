@@ -1,0 +1,7 @@
+{
+  "mongoURI" : "mongodb+srv://reetisharma:reetisharma123@codeconnect.owzuu.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret" : "mysecrettoken",
+  "githubToken":"931412369a4cac138aaaee7d6f7e04c25cbdba53",
+  "githubSecret":"41f5d80c5728f6a7de17d6d384814a2bdbc7cc03",
+  "githubClientId":"a8a5ee9c1cbe0644352f"
+}
