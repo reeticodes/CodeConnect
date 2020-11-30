@@ -1,11 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Link, Redirect } from "react-router-dom";
-import "./ProfileTop.css";
-import { followUser, unfollowUser, getFolllowers, getFollowing } from "../../actions/profile";
-import { connect } from "react-redux";
-import adminlogo from '../../img/icons8-user-shield-64.ico'
-
+import React, { Fragment, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
+import './ProfileTop.css';
+import { followUser, unfollowUser, getFolllowers, getFollowing } from '../../actions/profile';
+import { connect } from 'react-redux';
+import adminlogo from '../../img/icons8-user-shield-64.ico';
 
 const ProfileTop = ({
 	isAuthenticated,
@@ -17,8 +16,7 @@ const ProfileTop = ({
 	let [isFollowed, setFollow] = useState(false);
 
 	useEffect(() => {
-		if(isAuthenticated)
-		check();
+		if (isAuthenticated) check();
 	}, []);
 	function check() {
 		for (let i = 0; i < followers.length; i++) {
@@ -60,7 +58,14 @@ const ProfileTop = ({
 	return (
 		<div className="ProfileTop">
 			<img src={avatar} alt="avatar" />
-			<h3>{name} {user.admin === true && <Fragment><img src={adminlogo} alt="admin logo" style={{height: '30px'}, {width:'30px'}}/></Fragment>}</h3>
+			<h3 style={{ display: 'flex', justifyContent: 'center' }}>
+				{name}{' '}
+				{user.admin === true && (
+					<Fragment>
+						<img src={adminlogo} alt="admin logo" style={{ width: '30px', margin: '0 0 0 10px' }} />
+					</Fragment>
+				)}
+			</h3>
 			<div className="followtag">
 				<svg
 					text="gray-light"
@@ -75,25 +80,24 @@ const ProfileTop = ({
 						fill-rule="evenodd"
 						d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"
 					></path>
-				</svg>{" "}
+				</svg>{' '}
 				<Link to={`/profile/followers/${user._id}`}>
-					{followers.length} {followers.length == 1 ? "follower" : "followers"}
+					{followers.length} {followers.length == 1 ? 'follower' : 'followers'}
 				</Link>
-				{"·"}
+				{'·'}
 				<Link to={`/profile/following/${user._id}`}>{following.length} following</Link>
 			</div>
 			{isAuthenticated && user._id !== auth.user._id && (
 				<Fragment>{isFollowed ? Followed : NotFollowed}</Fragment>
 			)}
 			<div className="vertical__group__center">
-				{" "}
+				{' '}
 				{isAuthenticated && auth.loading === false && auth.user._id === user._id && (
 					<Link to="/edit-profile" className="github__neutral">
 						Edit Profile
 					</Link>
 				)}
 			</div>
-
 			<p>{status} Student</p>
 			{location && (
 				<span>
@@ -141,6 +145,7 @@ ProfileTop.propTypes = {
 	followUser: PropTypes.func.isRequired,
 	isAuthenticated: PropTypes.bool.isRequired,
 };
+
 const mapStateToProps = (state) => ({
 	followers: state.profile.followers,
 	following: state.profile.following,
@@ -148,6 +153,7 @@ const mapStateToProps = (state) => ({
 
 	isAuthenticated: state.auth.isAuthenticated,
 });
+
 export default connect(mapStateToProps, {
 	followUser,
 	unfollowUser,
