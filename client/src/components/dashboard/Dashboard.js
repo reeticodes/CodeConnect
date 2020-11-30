@@ -1,12 +1,11 @@
-import React, { useEffect, Fragment } from "react";
-import { Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Spinner from "../../components/layout/Spinner";
-// import DashboardActions from './DashboardActions';
-import { getCurrentProfile } from "../../actions/profile";
+import React, { useEffect, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../../components/layout/Spinner';
+import { getCurrentProfile } from '../../actions/profile';
 
-import CreateProfile from "../profile-form/CreateProfile";
+import CreateProfile from '../profile-form/CreateProfile';
 
 const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading, id } }) => {
 	useEffect(() => {
