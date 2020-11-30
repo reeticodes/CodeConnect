@@ -8,8 +8,7 @@ function Footer() {
 				<span className="outlined">CODE</span> CONNECT
 			</div>
 			<div id="footer-links">
-				<a href=".">HOME</a>
-				<a href=".">SIGN IN</a>
+				
 				<a href=".">CREATE ACCOUNT</a>
 				<a href="https://opensource.org/licenses/MIT" target="_blank">
 					LICENCE
