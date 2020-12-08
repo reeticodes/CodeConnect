@@ -13,7 +13,7 @@ if (serializedState === null) return undefined;
    return JSON.parse(serializedState);
 }
 
-const initialState = {};
+
 
 const middleware = [thunk];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
