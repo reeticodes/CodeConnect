@@ -36,6 +36,7 @@ export const Login = ({ login, isAuthenticated }) => {
 					<div className="form-group">
 						<span>Email</span>
 						<input type="email" name="email" value={email} onChange={(e) => onChange(e)} required />
+						<span id="nhitm">(Please enter nhitm college id)</span>
 					</div>
 					<div className="form-group">
 						<span>Password</span>

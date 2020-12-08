@@ -40,7 +40,7 @@ export const Register = ({ setAlert, register, isAuthenticated }) => {
 				<h1>Sign Up</h1>
 				<form className="register-form" onSubmit={(e) => onSubmit(e)}>
 					<div className="form-group">
-						<span>Email</span>
+						<span id="email">Email </span>
 						<input
 							type="email"
 							name="email"
@@ -48,6 +48,7 @@ export const Register = ({ setAlert, register, isAuthenticated }) => {
 							onChange={(e) => onChange(e)}
 							//required
 						/>
+						<span id="nhitm">(Please enter nhitm college id)</span>
 					</div>
 					<div className="form-group">
 						<span>Password</span>
