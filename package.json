@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Social network for developers",
   "main": "server.js",
-  "engines": {"node": "14.x" },
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
@@ -32,6 +34,7 @@
     "mongoose": "^5.9.28",
     "normalize-url": "^5.2.1",
     "react-modal": "^3.11.2",
+    "react-rte": "^0.16.3",
     "reactstrap": "^8.5.1",
     "redux-persist": "^6.0.0"
   },

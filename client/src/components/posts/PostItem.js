@@ -40,6 +40,7 @@ const PostItem = ({
 			<Link to={`/posts/${_id}`}>
 				<button>
 					<span>💬</span>
+<span>{comments.length>0 && <span>{comments.length}</span> }</span>
 				</button>
 			</Link>
 			{!auth.loading && user === auth.user._id && (
