@@ -18,11 +18,7 @@ const sprites = require('@dicebear/avatars-bottts-sprites').default
 //@desc     Register user
 //@access   Public
 router.post('/',[
-  check('email','Please include a valid email').isEmail().custom(val =>
-    {
-    const regex = /@nhitm.ac.in\s*$/;
-    return regex.test(val);
-    } ),
+  check('email','Please include a valid email').isEmail(),
   check('password','Please enter a password with 6 or more characters').isLength({min : 6})
 
 ],async (req,res) => {

@@ -6,19 +6,23 @@ import { filterSearch } from "../../actions/profile";
 import { connect } from "react-redux";
 import "./searchbar.css";
 
+
+
+
+
 const SearchBar = ({ setAlert, filterSearch }) => {
 	const [text, setText] = useState(" ");
 
 	const OnChange = (e) => setText(e.target.value);
 
 	const OnSubmit = async (e) => {
-		console.log("im here");
+
 		e.preventDefault();
 		if (text == " ") {
 			setAlert("Please Enter Something", "danger");
 		} else {
 			filterSearch(text);
-			console.log("im here3");
+
 		}
 	};
 
